@@ -10,7 +10,8 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
-fresh zsh --file
+fresh zsh/* --file=~/.zshrc --marker
+
 fresh git --file
 fresh nano --file
 fresh ruby --file
