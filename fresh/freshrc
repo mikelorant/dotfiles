@@ -12,7 +12,7 @@ fresh freshshell/fresh bin/fresh --bin
 
 fresh zsh/* --file=~/.zshrc --marker
 
-fresh git --file
+fresh git --file=~/.gitconfig --filter='erb -T 2'
 fresh nano --file
 fresh ruby --file
 

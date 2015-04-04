@@ -1,0 +1,8 @@
+<% name   = %x(id -F).chomp %>
+<% user   = %x(id -un).chomp %>
+<% domain = %x(hostname).partition('.').last.chomp %>
+[user]
+	name = <%= name %>
+	email = <%= user %>@<%= domain %>
+[push]
+	default = simple
