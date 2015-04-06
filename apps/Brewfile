@@ -1,0 +1,8 @@
+caskroom/cask/brew-cask
+zsh
+wget
+ssh-copy-id
+awscli
+mtr
+pv
+pwgen
