@@ -8,13 +8,25 @@
 #
 # See http://freshshell.com/readme for documentation.
 
+# Fresh
 fresh freshshell/fresh bin/fresh --bin
 
+# Zsh
 fresh zsh/* --file=~/.zshrc --marker
+fresh zsh-users/zsh-completions src --file=completion/
+fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completion/_fresh
 
+# Git
 fresh git --file=~/.gitconfig --filter='erb -T 2'
+
+# Nano
 fresh nano --file
+
+# Ruby
 fresh ruby --file
 
+# SSH
 fresh ssh/config --file=~/.ssh/config
+
+# AWS Command Line Interface
 fresh aws/config --file=~/.aws/config
