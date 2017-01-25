@@ -30,3 +30,6 @@ fresh ssh/config --file=~/.ssh/config
 
 # AWS Command Line Interface
 fresh aws/config --file=~/.aws/config
+
+# macOS
+fresh osx/* --file=~/.osx --marker

@@ -1,3 +1,15 @@
 StrictHostKeyChecking no
 ForwardAgent yes
 ServerAliveInterval 5
+UseKeychain yes
+AddKeysToAgent yes
+
+IdentityFile   ~/.ssh/id_rsa
+IdentityFile   ~/.ssh/ffxblue_cloudformation
+
+Host azrael
+  User mikel
+  Hostname azrael.mlvision.com.au
+
+Host *.ffxblue.com.au
+  User        ubuntu

@@ -1,6 +1,7 @@
 <% name   = %x(id -F).chomp %>
 <% user   = %x(id -un).chomp %>
 <% domain = %x(hostname).partition('.').last.chomp %>
+<% domain = 'fairfaxmedia.com.au' %>
 [user]
 	name = <%= name %>
 	email = <%= user %>@<%= domain %>

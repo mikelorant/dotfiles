@@ -1,5 +1,7 @@
 autoload -U colors && colors
 
-function precmd PROMPT="%S%t ($[$SECONDS/60] Mins) %m:%C>%s "
+function precmd() {
+ PROMPT="%S%t ($[$SECONDS/60] Mins) %m:%C>%s "
+}
 
 export CLICOLOR=1;
