@@ -1,0 +1,3 @@
+zstyle ':completion:*' menu select
+
+autoload -U compinit && compinit

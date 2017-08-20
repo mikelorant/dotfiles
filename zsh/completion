@@ -1,6 +1,0 @@
-zstyle ':completion:*' menu select
-
-fpath=(~/.fresh/build/completion $fpath)
-source /usr/local/share/zsh/site-functions/_aws
-
-autoload -U compinit && compinit
