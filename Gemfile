@@ -1,3 +1,6 @@
 gem 'bundler'
 gem 'sfn'
 gem 'gemfury'
+gem 'hashie'
+gem 'byebug'
+gem 'git-version-bump'

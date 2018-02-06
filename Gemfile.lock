@@ -1,4 +1,5 @@
 GEM
+  remote: https://api.rubygems.org/
   specs:
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
@@ -21,6 +22,7 @@ GEM
       bogo
       command_line_reporter
       paint
+    byebug (9.1.0)
     colored (1.2)
     command_line_reporter (3.3.6)
       colored (>= 1.2)
@@ -34,6 +36,7 @@ GEM
       multi_json (~> 1.10)
       netrc (~> 0.10.0)
       thor (>= 0.14.0, < 1.0.0.pre)
+    git-version-bump (0.15.1)
     graph (2.8.2)
     hashdiff (0.2.3)
     hashie (3.5.4)
@@ -105,8 +108,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  byebug
   gemfury
+  git-version-bump
+  hashie
   sfn
-
-BUNDLED WITH
-   1.14.5

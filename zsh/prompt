@@ -6,6 +6,7 @@ zstyle ':vcs_info:git*' formats "(%b) "
 
 precmd () {
   vcs_info
+  it2setkeylabel set status "Context: $( kubectl config current-context )"
 }
 
 setopt prompt_subst

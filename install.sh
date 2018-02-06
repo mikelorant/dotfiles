@@ -19,6 +19,8 @@ cd $HOME/.dotfiles
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" | exit; done 2>/dev/null &
 
+softwareupdate -i -a
+
 brew update
 brew upgrade
 brew tap homebrew/bundle
@@ -31,3 +33,5 @@ cd $HOME
 bin/fresh
 
 which atom && apm stars --install
+
+gem install -g Gemfile
