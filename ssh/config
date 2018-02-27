@@ -13,3 +13,9 @@ Host azrael
 
 Host *.ffxblue.com.au
   User        ubuntu
+
+Host ffxassets.upload.akamai.com
+  User sshacs
+  IdentityFile ~/.ssh/id_dsa_akamai
+  HostKeyAlgorithms=+ssh-dss
+  # RemoteCommand cms
