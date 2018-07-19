@@ -1,1 +1,1 @@
-s2a=saml2aws login --skip-prompt --role=arn:aws:iam::175914186171:role/infrastructure_admin
+alias s2a=saml2aws login --skip-prompt --role=arn:aws:iam::175914186171:role/infrastructure_admin
