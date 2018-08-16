@@ -15,7 +15,7 @@ brew 'git'
 brew 'jp'
 brew 'jq'
 brew 'ffxblue/custom/kubernetes-cli@1.9.6'
-brew 'ffxblue/custom/kops@1.9.1'
+brew 'ffxblue/custom/kops@1.9'
 brew 'kubernetes-helm'
 brew 'mtr'
 brew 'pv'
@@ -35,6 +35,7 @@ brew 'kubeval'
 brew 'akamai'
 brew 'dep'
 brew 'coreutils'
+brew 'shellcheck'
 
 cask '1password'
 cask 'atom'
@@ -76,3 +77,4 @@ cask 'google-cloud-sdk'
 
 mas 'parcel', id: 639968404
 mas 'microsoft-remote-desktop', id: 715768417
+mas 'xcode', id: 497799835
