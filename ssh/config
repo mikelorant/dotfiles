@@ -3,9 +3,12 @@ ForwardAgent yes
 ServerAliveInterval 5
 UseKeychain yes
 AddKeysToAgent yes
+PubkeyAcceptedKeyTypes +ssh-dss
 
 IdentityFile   ~/.ssh/id_rsa
 IdentityFile   ~/.ssh/ffxblue_cloudformation
+IdentityFile   ~/.ssh/ffxwhite_cloudformation
+IdentityFile   ~/.ssh/white_id_dsa
 
 Host azrael
   User mikel
@@ -19,3 +22,9 @@ Host ffxassets.upload.akamai.com
   IdentityFile ~/.ssh/id_dsa_akamai
   HostKeyAlgorithms=+ssh-dss
   # RemoteCommand cms
+
+Host apinfppm.prod.f2.com.au
+  User mlorant
+
+Host cvs1.int.f2.com.au
+  User mlorant
