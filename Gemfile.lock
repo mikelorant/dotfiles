@@ -103,11 +103,15 @@ GEM
     unf_ext (0.0.7.2)
     xml-simple (1.1.5)
 
+GEM
+  remote: https://rubygems.org/
+  specs:
+
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (~> 1.17)
   byebug
   gemfury
   git-version-bump
