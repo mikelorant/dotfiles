@@ -6,7 +6,7 @@ fi
 
 FOUND_HELM=0
 if which helm >/dev/null 2>&1; then
-    source <(helm completion zsh)
+    source <(helm completion zsh | sed -e 's/aliashash\["\(.\{1,\}\)"\]/aliashash[\1]/g')
     FOUND_HELM=1
 fi
 
