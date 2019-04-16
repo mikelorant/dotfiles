@@ -45,6 +45,10 @@ brew 'gettext'
 brew 'rename'
 brew 'magic-wormhole'
 brew 'socat'
+brew 'jruby'
+brew 'opa'
+brew 'yamllint'
+brew 'net-snmp'
 
 cask '1password'
 cask 'atom'
@@ -84,6 +88,9 @@ cask 'iina'
 cask 'google-cloud-sdk'
 cask 'homebrew/cask-drivers/yubico-yubikey-manager'
 cask 'steam'
+cask 'visualvm'
+cask 'cleanmymac'
+cask 'netspot'
 
 mas 'parcel', id: 639968404
 mas 'microsoft-remote-desktop', id: 715768417
