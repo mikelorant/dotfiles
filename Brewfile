@@ -91,6 +91,7 @@ cask 'steam'
 cask 'visualvm'
 cask 'cleanmymac'
 cask 'netspot'
+cask 'transmission-remote-gui'
 
 mas 'parcel', id: 639968404
 mas 'microsoft-remote-desktop', id: 715768417
