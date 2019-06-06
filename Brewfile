@@ -89,7 +89,6 @@ cask 'google-cloud-sdk'
 cask 'homebrew/cask-drivers/yubico-yubikey-manager'
 cask 'steam'
 cask 'visualvm'
-cask 'cleanmymac'
 cask 'netspot'
 cask 'transmission-remote-gui'
 
