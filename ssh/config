@@ -28,3 +28,17 @@ Host apinfppm.prod.f2.com.au
 
 Host cvs1.int.f2.com.au
   User mlorant
+
+Host pi
+  User pi
+  Hostname 172.31.51.25
+
+Host tunnel
+  Hostname azinfsto058a.dynamic.f2.com.au
+  User mlorant
+
+Host azrael-corp
+  Hostname azrael.mlvision.com.au
+  User mikel
+  ProxyCommand ssh tunnel nc %h %p %r
+  # RemoteForward 52222 127.0.0.1:22

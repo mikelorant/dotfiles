@@ -14,6 +14,7 @@ brew 'docker-machine-driver-hyperkit'
 brew 'git'
 brew 'jp'
 brew 'jq'
+brew 'yq'
 brew 'kubernetes-cli'
 brew 'ffxblue/custom/kops@1.10'
 brew 'kubernetes-helm'
@@ -91,6 +92,8 @@ cask 'steam'
 cask 'visualvm'
 cask 'netspot'
 cask 'transmission-remote-gui'
+cask 'flotato'
+cask 'balenaetcher'
 
 mas 'parcel', id: 639968404
 mas 'microsoft-remote-desktop', id: 715768417
