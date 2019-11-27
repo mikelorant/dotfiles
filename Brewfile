@@ -51,6 +51,7 @@ brew 'opa'
 brew 'yamllint'
 brew 'net-snmp'
 brew 'helmfile'
+brew 'tidy-html5'
 
 cask '1password'
 cask 'atom'
@@ -95,6 +96,11 @@ cask 'netspot'
 cask 'transmission-remote-gui'
 cask 'flotato'
 cask 'balenaetcher'
+cask 'google-drive-file-stream'
+cask 'go64'
+cask 'plex-media-server'
+cask 'tweetbot'
+cask 'adoptopenjdk'
 
 mas 'parcel', id: 639968404
 mas 'microsoft-remote-desktop', id: 715768417
