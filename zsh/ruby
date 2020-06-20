@@ -1,2 +1,2 @@
-RUBYPATH=$( gem environment gemdir )
-export PATH="${RUBYPATH}/bin:$PATH"
+GEMPATH=$( gem environment gemdir )
+export PATH="/usr/local/opt/ruby/bin:${GEMPATH}/bin:$PATH"

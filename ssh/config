@@ -10,35 +10,18 @@ IdentityFile   ~/.ssh/ffxblue_cloudformation
 IdentityFile   ~/.ssh/ffxwhite_cloudformation
 IdentityFile   ~/.ssh/white_id_dsa
 
-Host azrael
-  User mikel
-  Hostname azrael.mlvision.com.au
-
 Host *.ffxblue.com.au
   User        ubuntu
-
-Host ffxassets.upload.akamai.com
-  User sshacs
-  IdentityFile ~/.ssh/id_dsa_akamai
-  HostKeyAlgorithms=+ssh-dss
-  # RemoteCommand cms
-
-Host apinfppm.prod.f2.com.au
-  User mlorant
-
-Host cvs1.int.f2.com.au
-  User mlorant
-
-Host pi
-  User pi
-  Hostname 172.31.51.25
 
 Host tunnel
   Hostname azinfsto058a.dynamic.f2.com.au
   User mlorant
 
+Host azrael
+  User mikel
+  Hostname azrael.mlvision.com.au
+
 Host azrael-corp
   Hostname azrael.mlvision.com.au
   User mikel
   ProxyCommand ssh tunnel nc %h %p %r
-  # RemoteForward 52222 127.0.0.1:22
