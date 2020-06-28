@@ -33,3 +33,6 @@ fresh aws/config --file=~/.aws/config
 
 # macOS
 fresh osx/\* --file=~/.osx --marker
+
+# Powerlevel10k
+fresh powerlevel10k/p10k --file ~/.p10k.zsh

@@ -26,9 +26,6 @@ brew upgrade
 brew tap homebrew/bundle
 brew bundle --verbose
 
-which zsh | sudo tee -a /etc/shells
-chsh -s $(which zsh)
-
 cd $HOME
 bin/fresh
 

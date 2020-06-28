@@ -1,14 +1,3 @@
-autoload -U colors && colors
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git*' formats "(%b) "
-
 precmd () {
-  vcs_info
   it2setkeylabel set status "Context: $( kubectl config current-context )"
 }
-
-setopt prompt_subst
-
-PS1="%S%t \$vcs_info_msg_0_%m:%C>%s "
