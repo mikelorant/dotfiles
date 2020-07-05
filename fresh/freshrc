@@ -8,31 +8,13 @@
 #
 # See http://freshshell.com/readme for documentation.
 
-# Fresh
-fresh freshshell/fresh bin/fresh --bin
-
-# Zsh
-fresh zsh/\* --file=~/.zshrc --marker
-fresh zsh-users/zsh-completions src --file=completion/
-fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completion/_fresh
-
-# Git
-fresh git/\* --file=~/.gitconfig --filter='erb -T 2'
-
-# Nano
-fresh nano/\* --file
-
-# Ruby
-fresh ruby/\* --file
-
-# SSH
-fresh ssh/config --file=~/.ssh/config
-
-# AWS Command Line Interface
-fresh aws/config --file=~/.aws/config
-
-# macOS
-fresh osx/\* --file=~/.osx --marker
-
-# Powerlevel10k
-fresh powerlevel10k/p10k --file ~/.p10k.zsh
+fresh freshshell/fresh bin/fresh --bin              # fresh
+fresh zsh/* --file                                  # zsh
+fresh git/* --file=~/.gitconfig --filter='erb -T 2' # git
+fresh nano/* --file                                 # nano
+fresh ruby/* --file                                 # ruby
+fresh ssh/* --file=~/.ssh/config                    # ssh
+fresh awscli/* --file=~/.aws/config                 # awscli
+fresh saml2aws/* --file                             # saml2aws
+fresh osx/* --file=~/.osx                           # osx
+fresh powerlevel10k/* --file ~/.p10k.zsh            # powerlevel10

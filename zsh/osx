@@ -1,3 +1,0 @@
-export CLICOLOR=1
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export EDITOR=nano

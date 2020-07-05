@@ -1,1 +1,0 @@
-export KOPS_STATE_STORE=s3://ffxblue-infrastructure-kubernetes-shared-v1

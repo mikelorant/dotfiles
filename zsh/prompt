@@ -1,3 +1,0 @@
-precmd () {
-  it2setkeylabel set status "Context: $( kubectl config current-context )"
-}
