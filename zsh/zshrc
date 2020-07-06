@@ -4,15 +4,17 @@ zmodload zsh/zprof
 # completion
 zstyle ':completion:*' menu select
 
-# autoload -U compinit && compinit
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then compinit; else compinit -C; fi
 
+source <(antibody init)
+
+antibody bundle < ~/.zsh_plugins.txt
+
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh # p10k configuration
-[ -f /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme ] && source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme # p10k theme
 [ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh # fresh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf
-[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh # iterm2
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
 ## History file configuration
 HISTFILE=~/.zhistory
@@ -24,7 +26,7 @@ setopt HIST_IGNORE_ALL_DUPS # history ignore duplicates
 setopt HIST_IGNORE_SPACE    # history ignore commands with leading space
 setopt SHARE_HISTORY        # shared history between sessions
 
-setopt interactivecomments  # allow interactive comments
+setopt INTERACTIVECOMMENTS  # allow interactive comments
 
 # keyboard bindings
 bindkey "^[[3~"  delete-char
@@ -39,7 +41,7 @@ export PATH="/usr/local/sbin:$PATH" # add path for homebrew
 export CLICOLOR=1                                                         # enable colours in terminal
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD                                    # colour settings for ls
 export EDITOR=nano                                                        # default editor nano
-export KOPS_STATE_STORE=s3://ffxblue-infrastructure-kubernetes-shared-v1  # kops state store
+export DIRENV_LOG_FORMAT=                                                 # disable direnv output
 
 # aliases
 alias k=kubectl

@@ -8,13 +8,12 @@
 #
 # See http://freshshell.com/readme for documentation.
 
-fresh freshshell/fresh bin/fresh --bin              # fresh
-fresh zsh/* --file                                  # zsh
-fresh git/* --file=~/.gitconfig --filter='erb -T 2' # git
-fresh nano/* --file                                 # nano
-fresh ruby/* --file                                 # ruby
-fresh ssh/* --file=~/.ssh/config                    # ssh
-fresh awscli/* --file=~/.aws/config                 # awscli
-fresh saml2aws/* --file                             # saml2aws
-fresh osx/* --file=~/.osx                           # osx
-fresh powerlevel10k/* --file ~/.p10k.zsh            # powerlevel10
+fresh freshshell/fresh bin/fresh --bin
+fresh awscli/* --file=~/.aws/config
+fresh git/* --file=~/.gitconfig --filter='erb -T 2'
+fresh nano/* --file
+fresh powerlevel10k/* --file
+fresh ruby/* --file
+fresh saml2aws/* --file
+fresh ssh/* --file=~/.ssh/config
+fresh zsh/* --file

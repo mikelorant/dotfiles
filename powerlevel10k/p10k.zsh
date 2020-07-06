@@ -101,6 +101,7 @@
     # battery               # internal battery
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
+    saml2aws
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1570,6 +1571,13 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_saml2aws() {
+    integer expires=$( echo $( date -jf "%Y-%m-%dT%H:%M:%S" $( awk '$1 == "x_security_token_expires" {print $3}' ~/.aws/credentials ) +'%s' 2>/dev/null ) - $( date +'%s' ) | bc )
+    if (( expires < 0 )); then
+      p10k segment -f red -b white -i $'\uF05E'
+    fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
