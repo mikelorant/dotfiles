@@ -9,6 +9,7 @@
 # See http://freshshell.com/readme for documentation.
 
 fresh freshshell/fresh bin/fresh --bin
+fresh atom/* --file=~/.atom/config.cson
 fresh awscli/* --file=~/.aws/config
 fresh git/* --file=~/.gitconfig --filter='erb -T 2'
 fresh nano/* --file

@@ -16,6 +16,8 @@ antibody bundle < ~/.zsh_plugins.txt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf
 [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
+eval "$(zoxide init zsh --cmd j --no-aliases)"
+
 ## History file configuration
 HISTFILE=~/.zhistory
 HISTSIZE=1000000

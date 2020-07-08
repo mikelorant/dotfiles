@@ -1,0 +1,22 @@
+"*":
+  core:
+    customFileTypes:
+      "source.yaml.tpl": [
+        "yaml"
+        "yml"
+      ]
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "JetBrainsMono Nerd Font"
+    preferredLineLength: 120
+  welcome:
+    showOnStartup: false
+  "exception-reporting":
+    userId: "ddca6a90-ab9a-9379-6608-154226bab272"
+  "linter-ui-default": {}
+  "open-files":
+    collapsable: false
+  "tree-view": {}
+  "Sublime-Style-Column-Selection":
+    mouseButtonTrigger: "Middle"
+    selectKeyTrigger: "None"

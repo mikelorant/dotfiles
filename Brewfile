@@ -58,6 +58,7 @@ brew 'watch'
 brew 'wget'
 brew 'yamllint'
 brew 'yq'
+brew 'zoxide'
 brew 'zsh-completions'
 brew 'zsh'
 
