@@ -11,6 +11,7 @@
 fresh freshshell/fresh bin/fresh --bin
 fresh atom/* --file=~/.atom/config.cson
 fresh awscli/* --file=~/.aws/config
+fresh bat/* --file=~/.config/bat/config
 fresh git/* --file=~/.gitconfig --filter='erb -T 2'
 fresh nano/* --file
 fresh powerlevel10k/* --file

@@ -56,6 +56,7 @@ export ABBR_QUIET=1                    # enable abbr quiet mode
 
 # aliases
 alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
+alias cat="bat"
 
 # abbreviations
 abbr add k="kubectl"
