@@ -1,3 +1,6 @@
 zsh-users/zsh-autosuggestions
 zdharma/fast-syntax-highlighting
 romkatv/powerlevel10k
+hlissner/zsh-autopair
+aloxaf/fzf-tab
+olets/zsh-abbr

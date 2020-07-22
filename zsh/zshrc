@@ -16,6 +16,7 @@ antibody bundle < ~/.zsh_plugins.txt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf
 [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
+eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd j --no-aliases)"
 
 ## History file configuration
@@ -32,8 +33,12 @@ setopt INTERACTIVECOMMENTS  # allow interactive comments
 setopt TRANSIENT_RPROMPT    # remove any right prompt from display when accepting a command line
 
 # keyboard bindings
-bindkey "^[[3~"  delete-char
-bindkey "^[3;5~" delete-char
+bindkey "^[[3~"   delete-char
+bindkey "^[3;5~"  delete-char
+bindkey "^I"      fzf-tab-partial-and-complete
+bindkey "^U"      backward-kill-line # https://github.com/gableroux/iterm2-macos-dynamic-profile
+bindkey "^X\\x7f" backward-kill-line
+bindkey "^X^_"    redo
 
 # environmental variables
 # export PATH="$( gem environment gemdir )/bin:$PATH" # add path for ruby gem binaries
@@ -41,15 +46,27 @@ export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH" # add path for ruby gem b
 export PATH="/usr/local/opt/ruby/bin:$PATH" # add path for ruby
 export PATH="/usr/local/sbin:$PATH" # add path for homebrew
 
-export CLICOLOR=1                                                         # enable colours in terminal
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD                                    # colour settings for ls
-export EDITOR=nano                                                        # default editor nano
-export DIRENV_LOG_FORMAT=                                                 # disable direnv output
+export CLICOLOR=1                      # enable colours in terminal
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD # colour settings for ls
+# export LS_COLORS="di=36:ln=35:so=31;1;44:pi=30;1;44:ex=1;31:bd=0;1;44:cd=37;1;44:su=37;1;41:sg=30;1;43:tw=30;1;42:ow=30;1;43"
+export LS_COLORS="$(vivid generate jellybeans)"
+export EDITOR=nano                     # default editor nano
+export DIRENV_LOG_FORMAT=              # disable direnv output
+export ABBR_QUIET=1                    # enable abbr quiet mode
 
 # aliases
-alias k=kubectl
-alias s2a="saml2aws login --skip-prompt"
-alias s2c="saml2aws console"
+alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
+
+# abbreviations
+abbr add k="kubectl"
+abbr add ll="ls -l"
+abbr add ltr="ls -ltr"
+abbr add s2a="saml2aws login --skip-prompt"
+abbr add s2c="saml2aws console"
 
 # function precmd() { it2setkeylabel set status "Context: $( kubectl config current-context )"; }
 function precmd() { it2setkeylabel set status "Context: $( awk '$1 == "current-context:" {print $2}' ~/.kube/config )"; }
+function fzf-tab-partial-and-complete() { if [[ $LASTWIDGET = 'fzf-tab-partial-and-complete' ]]; then fzf-tab-complete; else zle complete-word; fi }
+function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
+
+zle -N fzf-tab-partial-and-complete

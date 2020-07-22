@@ -6,6 +6,10 @@
         "yml"
       ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "dracula-syntax"
+    ]
   editor:
     fontFamily: "JetBrainsMono Nerd Font"
     preferredLineLength: 120
