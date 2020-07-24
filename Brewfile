@@ -68,6 +68,7 @@ brew 'zsh-completions'
 brew 'zsh'
 
 cask '1password'
+cask '1password-cli'
 cask 'amazon-chime'
 cask 'atom'
 cask 'authy'
