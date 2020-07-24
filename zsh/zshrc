@@ -66,8 +66,9 @@ alias cat="bat"
 abbr add k="kubectl"
 abbr add ll="ls -l"
 abbr add ltr="ls -ltr"
-abbr add s2a="saml2aws login --skip-prompt"
-abbr add s2c="saml2aws console"
+abbr add ops="eval \$( op signin ninetech )"
+abbr add sal="saml2aws login --skip-prompt"
+abbr add sac="saml2aws console"
 
 # function precmd() { it2setkeylabel set status "Context: $( kubectl config current-context )"; }
 function precmd() { it2setkeylabel set status "Context: $( awk '$1 == "current-context:" {print $2}' ~/.kube/config )"; }
