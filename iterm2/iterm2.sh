@@ -2,18 +2,18 @@
 
 DELETE=false
 INIT=false
-for arg in "$@"
-do
+
+for arg in "$@"; do
   case $arg in
     -d|--delete)
-    DELETE=true
-    INIT=true
-    shift
-    ;;
+      DELETE=true
+      INIT=true
+      shift
+      ;;
     -i|--init)
-    INIT=true
-    shift
-    ;;
+      INIT=true
+      shift
+      ;;
   esac
 done
 
@@ -31,9 +31,10 @@ if ${INIT}; then
   # Start iTerm2
   /Applications/iTerm.app/Contents/MacOS/iTerm2 &
   # Wait for iTerm2 to start
-  sleep 5
+  sleep 2
   # Quit iTerm2
-  osascript -e 'quit app "iTerm2"'
+  # osascript -e 'quit app "iTerm2"'
+  killall iTerm2
 fi
 
 CMD="/usr/libexec/PlistBuddy -c"
