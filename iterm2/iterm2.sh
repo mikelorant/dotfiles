@@ -1,5 +1,41 @@
 #!/usr/bin/env sh
 
+DELETE=false
+INIT=false
+for arg in "$@"
+do
+  case $arg in
+    -d|--delete)
+    DELETE=true
+    INIT=true
+    shift
+    ;;
+    -i|--init)
+    INIT=true
+    shift
+    ;;
+  esac
+done
+
+if ${DELETE}; then
+  # Remove existing config.
+  defaults delete com.googlecode.iterm2
+  defaults delete com.googlecode.iterm2.private
+  rm -rf "${HOME}/Library/Caches/com.googlecode.iterm2"
+  rm -rf "${HOME}/Library/Saved Application State/com.googlecode.iterm2.savedState"
+  rm -rf "${HOME}/Library/Application Support/iTerm2"
+fi
+
+# Config must be generated before these settings can be applied.
+if ${INIT}; then
+  # Start iTerm2
+  /Applications/iTerm.app/Contents/MacOS/iTerm2 &
+  # Wait for iTerm2 to start
+  sleep 5
+  # Quit iTerm2
+  osascript -e 'quit app "iTerm2"'
+fi
+
 CMD="/usr/libexec/PlistBuddy -c"
 FILE="${HOME}/Library/Preferences/com.googlecode.iterm2.plist"
 
@@ -27,84 +63,93 @@ defaults write com.googlecode.iterm2 NeverWarnAboutShortLivedSessions_${GUID} -b
 # defaults write com.googlecode.iterm2 UseAdaptiveFrameRate -bool false
 
 # New Bookmarks
-${CMD} "Add :'New Bookmarks' array" ${FILE}
+${CMD} "Add :'New Bookmarks' array" ${FILE} 2>/dev/null
 
 # Use built-in Powerline glyphs.
-${CMD} "Delete :'New Bookmarks':0:'Draw Powerline Glyphs'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Draw Powerline Glyphs'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Draw Powerline Glyphs' bool true" ${FILE}
-${CMD} "Delete :'New Bookmarks':0:'Non Ascii Font'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Non Ascii Font'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Non Ascii Font' string JetBrainsMonoNerdFontComplete-Regular 12" ${FILE}
-${CMD} "Delete :'New Bookmarks':0:'Normal Font'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Normal Font'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Normal Font' string JetBrainsMono-Regular 12" ${FILE}
 # Use Non-ASCII Font
 # The non-ASCII font affects all characters above code point 127.
-${CMD} "Delete :'New Bookmarks':0:'Use Non-ASCII Font'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Use Non-ASCII Font'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Use Non-ASCII Font' bool true" ${FILE}
-${CMD} "Delete :'New Bookmarks':0:'Show Mark Indicators'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Show Mark Indicators'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Show Mark Indicators' bool false" ${FILE}
 # Unlimited Scrollback
-${CMD} "Delete :'New Bookmarks':0:'Unlimited Scrollback'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Unlimited Scrollback'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Unlimited Scrollback' bool true" ${FILE}
 # Window Type: (15) Maximized
-${CMD} "Delete :'New Bookmarks':0:'Window Type'" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Window Type'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Window Type' integer 15" ${FILE}
 
 # Delete all characters left of the cursor
 # ⌘ + ←Delete
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x7f-0x100000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7f-0x100000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7f-0x100000:Text string 0x15" ${FILE}
 
 # Delete all characters right of the cursor
 # ⌘ + fn + ←Delete
 # ⌘ + Delete→
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf728-0x100000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf728-0x100000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf728-0x100000:Text string 0x0b" ${FILE}
 
 # Delete one word to left of cursor
 # ⌥ + ←Delete
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x7f-0x80000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7f-0x80000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7f-0x80000:Text string 0x1b 0x08" ${FILE}
 
 # Delete one word to right of cursor
 # ⌥ + fn + ←Delete
 # ⌥ + Delete→
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf728-0x80000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf728-0x80000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf728-0x80000:Text string 0x1b 0x64" ${FILE}
 
 # Move cursor to the front of line
 # ⌘ + ←
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf702-0x300000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x300000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x300000:Text string 0x01" ${FILE}
 
 # Move cursor to the end of line
 # ⌘ + →
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf703-0x300000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x300000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x300000:Text string 0x05" ${FILE}
 
 # Move cursor one word left
 # ⌥ + ←
-${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x280000:Text string 0x1b 0x62" ${FILE}
 
 # Move cursor one word right
 # ⌥ + →
-${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x280000:Text string 0x1b 0x66" ${FILE}
 
 # Undo
 # ⌘ + z
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x7a-0x100000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7a-0x100000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x7a-0x100000:Text string 0x1f" ${FILE}
 
 # Redo
 # ⇧ + ⌘ + z
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x5a-0x120000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x5a-0x120000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x5a-0x120000:Text string 0x18 0x1f" ${FILE}
 
 # Redo
 # ⌘ + y
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x79-0x100000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x79-0x100000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x79-0x100000:Text string 0x18 0x1f" ${FILE}
 
@@ -114,24 +159,22 @@ ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x79-0x100000:Text string 0x18 0x1
 # ${CMD} "Add :'New Bookmarks':0:'Show Status Bar' bool true" ${FILE}
 
 # GlobalTouchBarMap
+${CMD} "Delete :GlobalTouchBarMap" ${FILE} 2>/dev/null
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:shared':Action integer 12" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:shared':Label string Shared" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:shared':Text string kubectl config use-context blue-shared\\\n" ${FILE}
-
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:development':Action integer 12" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:development':Label string Development" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:development':Text string kubectl config use-context blue-development\\\n" ${FILE}
-
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:production':Action integer 12" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:production':Label string Production" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:production':Text string kubectl config use-context blue-production\\\n" ${FILE}
-
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:playpen':Action integer 12" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:playpen':Label string Playpen" ${FILE}
 ${CMD} "Add :GlobalTouchBarMap:'touchbar\:playpen':Text string kubectl config use-context blue-playpen\\\n" ${FILE}
 
 # NSTouchBarConfig: regular
-${CMD} "Delete :'NSTouchBarConfig\: regular':CurrentItems" ${FILE}
+${CMD} "Delete :'NSTouchBarConfig\: regular':CurrentItems" ${FILE} 2>/dev/null
 ${CMD} "Add :'NSTouchBarConfig\: regular':CurrentItems array" ${FILE}
 ${CMD} "Add :'NSTouchBarConfig\: regular':CurrentItems:0 string touchbar:shared" ${FILE}
 ${CMD} "Add :'NSTouchBarConfig\: regular':CurrentItems:1 string touchbar:development" ${FILE}
