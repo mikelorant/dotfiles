@@ -36,13 +36,17 @@ if ${INIT}; then
   # osascript -e 'quit app "iTerm2"'
   killall iTerm2
   # Wait for iTerm2 to write configuration.
-  sleep 5
+  sleep 6
 fi
 
 CMD="/usr/libexec/PlistBuddy -c"
 FILE="${HOME}/Library/Preferences/com.googlecode.iterm2.plist"
 
 GUID=$( ${CMD} "print :'New Bookmarks':0:Guid" ${FILE} )
+echo "Guid: ${GUID}"
+
+# Changes to font size will try to preserve session dimensions.
+defaults write com.googlecode.iterm2 AdjustWindowForFontSizeChange -bool false
 
 # Allow sessions to survive logging out and back in.
 # This breaks the “auth sufficient pam_tid.so” hack some people use to allow sudo to authenticate with Touch ID.
@@ -58,6 +62,12 @@ defaults write com.googlecode.iterm2 DisableWindowSizeSnap -bool true
 # Automatically check for new versions of iTerm2.
 defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool false
 
+# Where does the status bar go: (1) Bottom
+defaults write com.googlecode.iterm2 StatusBarPosition -integer 1
+
+# Stretch tabs horizontally to fill the tab bar.
+defaults write com.googlecode.iTerm2 StretchTabsToFillBar -bool false
+
 # NeverWarnAboutShortLivedSessions
 defaults write com.googlecode.iterm2 NeverWarnAboutShortLivedSessions_${GUID} -bool true
 
@@ -68,13 +78,21 @@ defaults write com.googlecode.iterm2 NeverWarnAboutShortLivedSessions_${GUID} -b
 # New Bookmarks
 ${CMD} "Add :'New Bookmarks' array" ${FILE} 2>/dev/null
 
+# Can the session title be changed by control sequence.
+${CMD} "Delete :'New Bookmarks':0:'Allow Title Setting'" ${FILE} 2>/dev/null
+${CMD} "Add :'New Bookmarks':0:'Allow Title Setting' bool false" ${FILE}
+
+# This dims all colors except that of the cursor.
+${CMD} "Delete :'New Bookmarks':0:'Smart Cursor Color'" ${FILE} 2>/dev/null
+${CMD} "Add :'New Bookmarks':0:'Smart Cursor Color' bool true" ${FILE}
+
 # Use built-in Powerline glyphs.
 ${CMD} "Delete :'New Bookmarks':0:'Draw Powerline Glyphs'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Draw Powerline Glyphs' bool true" ${FILE}
-${CMD} "Delete :'New Bookmarks':0:'Non Ascii Font'" ${FILE} 2>/dev/null
-${CMD} "Add :'New Bookmarks':0:'Non Ascii Font' string JetBrainsMonoNerdFontComplete-Regular 12" ${FILE}
 ${CMD} "Delete :'New Bookmarks':0:'Normal Font'" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Normal Font' string JetBrainsMono-Regular 12" ${FILE}
+${CMD} "Delete :'New Bookmarks':0:'Non Ascii Font'" ${FILE} 2>/dev/null
+${CMD} "Add :'New Bookmarks':0:'Non Ascii Font' string JetBrainsMonoNerdFontComplete-Regular 12" ${FILE}
 # Use Non-ASCII Font
 # The non-ASCII font affects all characters above code point 127.
 ${CMD} "Delete :'New Bookmarks':0:'Use Non-ASCII Font'" ${FILE} 2>/dev/null
