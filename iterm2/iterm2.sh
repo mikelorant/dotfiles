@@ -28,13 +28,15 @@ fi
 
 # Config must be generated before these settings can be applied.
 if ${INIT}; then
-  # Start iTerm2
+  # Start iTerm2.
   /Applications/iTerm.app/Contents/MacOS/iTerm2 &
-  # Wait for iTerm2 to start
+  # Wait for iTerm2 to start.
   sleep 2
-  # Quit iTerm2
+  # Quit iTerm2.
   # osascript -e 'quit app "iTerm2"'
   killall iTerm2
+  # Wait for iTerm2 to write configuration.
+  sleep 5
 fi
 
 CMD="/usr/libexec/PlistBuddy -c"
