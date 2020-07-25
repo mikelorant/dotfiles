@@ -20,10 +20,6 @@ done
 if ${DELETE}; then
   # Remove existing config.
   defaults delete com.googlecode.iterm2
-  defaults delete com.googlecode.iterm2.private
-  rm -rf "${HOME}/Library/Caches/com.googlecode.iterm2"
-  rm -rf "${HOME}/Library/Saved Application State/com.googlecode.iterm2.savedState"
-  rm -rf "${HOME}/Library/Application Support/iTerm2"
 fi
 
 # Config must be generated before these settings can be applied.
@@ -173,6 +169,18 @@ ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x5a-0x120000:Text string 0x18 0x1
 ${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0x79-0x100000" ${FILE} 2>/dev/null
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x79-0x100000:Action integer 11" ${FILE}
 ${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0x79-0x100000:Text string 0x18 0x1f" ${FILE}
+
+# Previous tab
+# ⌥ + ⌘ + ←
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf702-0x380000" ${FILE} 2>/dev/null
+${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x380000:Action integer 2" ${FILE}
+${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf702-0x380000:Text string" ${FILE}
+
+# Next tab
+# ⌥ + ⌘ + →
+${CMD} "Delete :'New Bookmarks':0:'Keyboard Map':0xf703-0x380000" ${FILE} 2>/dev/null
+${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x380000:Action integer 0" ${FILE}
+${CMD} "Add :'New Bookmarks':0:'Keyboard Map':0xf703-0x380000:Text string" ${FILE}
 
 # Show Status Bar
 # Enable this in future revisions.
