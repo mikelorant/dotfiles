@@ -76,3 +76,5 @@ function fzf-tab-partial-and-complete() { if [[ $LASTWIDGET = 'fzf-tab-partial-a
 function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
 
 zle -N fzf-tab-partial-and-complete
+
+[[ ${ITERM_SESSION_ID:3:1} -eq 0 && -x $(command -v neofetch) ]] && neofetch

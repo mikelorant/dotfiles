@@ -14,6 +14,7 @@ fresh awscli/* --file=~/.aws/config
 fresh bat/* --file=~/.config/bat/config
 fresh git/* --file=~/.gitconfig --filter='erb -T 2'
 fresh nano/* --file
+fresh neofetch/* --file=~/.config/neofetch/config.conf
 fresh powerlevel10k/* --file
 fresh ruby/* --file
 fresh saml2aws/* --file
