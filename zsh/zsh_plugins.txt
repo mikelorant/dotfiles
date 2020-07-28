@@ -4,3 +4,4 @@ romkatv/powerlevel10k
 hlissner/zsh-autopair
 aloxaf/fzf-tab
 olets/zsh-abbr
+ael-code/zsh-colored-man-pages
