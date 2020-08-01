@@ -20,7 +20,7 @@ antibody bundle < ~/.zsh_plugins.txt
 # [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
 
 eval "$(direnv hook zsh)"
-eval "$(zoxide init zsh --cmd j --no-aliases)"
+eval "$(zoxide init zsh --cmd cdd)"
 
 ## History file configuration
 HISTFILE=~/.zhistory
