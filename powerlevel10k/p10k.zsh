@@ -1580,6 +1580,25 @@
     fi
   }
 
+  function p10k-on-post-widget() {
+    if [[ $POWERLEVEL9K_ZOXIDE_BUFFER != $PREBUFFER$BUFFER ]]; then
+      typeset -g POWERLEVEL9K_ZOXIDE_BUFFER=$PREBUFFER$BUFFER
+      # words[1] is the command, words[2] is the first argument, etc.
+      local words=("${(@Q)${(@Z+C+)POWERLEVEL9K_ZOXIDE_BUFFER}}")
+      if [[ $words[1] == cdd ]]; then
+        POWERLEVEL9K_ZOXIDE_SYMBOL=$'\ufc32'
+        POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query $words[2] 2>/dev/null )
+        zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL $POWERLEVEL9K_ZOXIDE_RESULT"
+        typeset -g POWERLEVEL9K_ZOXIDE_VISIBLE=true
+      else
+        if [[ $POWERLEVEL9K_ZOXIDE_VISIBLE == true ]]; then
+          zle -M ''
+          typeset -g POWERLEVEL9K_ZOXIDE_VISIBLE=false
+        fi
+      fi
+    fi
+  }
+
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
   # is to generate the prompt segment for display in instant prompt. See
   # https://github.com/romkatv/powerlevel10k/blob/master/README.md#instant-prompt.
