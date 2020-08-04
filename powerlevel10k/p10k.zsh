@@ -1574,10 +1574,22 @@
   }
 
   function prompt_saml2aws() {
-    integer expires=$( echo $( date -jf "%Y-%m-%dT%H:%M:%S" $( awk '$1 == "x_security_token_expires" {print $3}' ~/.aws/credentials ) +'%s' 2>/dev/null ) - $( date +'%s' ) | bc )
-    if (( expires < 0 )); then
-      p10k segment -f red -b white -i $'\uF05E'
+    emulate -L zsh -o extended_glob
+    [[ -r ~/.aws/credentials ]] || return
+    local -a mtime
+    zstat -A mtime +mtime -- ~/.aws/credentials || return
+    if [[ $mtime[1] != $my_saml2aws_mtime ]]; then
+      local cred
+      cred=$(<~/.aws/credentials) || return
+      local -a match mbegin mend
+      [[ $'\n'$cred$'\n' == (#b)*$'\n'x_security_token_expires[$' \t']#=[$' \t']#([^$'\n']#)$'\n'* ]] || return
+      typeset -g my_saml2aws_mtime=$mtime[1]
+      typeset -g my_saml2aws_expires=${match[1]%+*}
     fi
+    local now
+    strftime -s now "%Y-%m-%dT%H:%M:%S"
+    [[ $now > $my_saml2aws_expires ]] || return
+    p10k segment -f red -b white -i $'\uF05E'
   }
 
   function p10k-on-post-widget() {
