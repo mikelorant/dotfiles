@@ -5,3 +5,4 @@ hlissner/zsh-autopair
 aloxaf/fzf-tab
 olets/zsh-abbr
 ael-code/zsh-colored-man-pages
+zsh-users/zsh-history-substring-search

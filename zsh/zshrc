@@ -42,6 +42,8 @@ bindkey "^I"      fzf-tab-partial-and-complete
 bindkey "^U"      backward-kill-line # https://github.com/gableroux/iterm2-macos-dynamic-profile
 bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
+bindkey "^[[A"    history-substring-search-up
+bindkey "^[[B"    history-substring-search-down
 
 # environmental variables
 # export PATH="$( gem environment gemdir )/bin:$PATH" # add path for ruby gem binaries
