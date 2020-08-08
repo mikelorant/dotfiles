@@ -9,6 +9,7 @@
 # See http://freshshell.com/readme for documentation.
 
 fresh freshshell/fresh bin/fresh --bin
+fresh abbr/* --file=~/.config/zsh/abbreviations
 fresh atom/* --file=~/.atom/config.cson
 fresh awscli/* --file=~/.aws/config
 fresh bat/* --file=~/.config/bat/config

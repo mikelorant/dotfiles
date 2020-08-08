@@ -1,0 +1,6 @@
+abbr k="kubectl"
+abbr ll="ls -l"
+abbr ltr="ls -ltr"
+abbr ops="eval \$( op signin ninetech )"
+abbr sac="saml2aws console"
+abbr sal="saml2aws login --skip-prompt"
