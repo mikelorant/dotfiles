@@ -1599,7 +1599,7 @@
       local words=("${(@Q)${(@Z+C+)POWERLEVEL9K_ZOXIDE_BUFFER}}")
       if [[ $words[1] == cdd ]]; then
         POWERLEVEL9K_ZOXIDE_SYMBOL=$'\ufc32'
-        POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query $words[2] 2>&1 )
+        POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query ${words[@]:1} 2>&1 )
         zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL $POWERLEVEL9K_ZOXIDE_RESULT"
         typeset -g POWERLEVEL9K_ZOXIDE_VISIBLE=true
       else
