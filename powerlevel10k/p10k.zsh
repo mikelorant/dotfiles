@@ -1624,6 +1624,7 @@
   # function p10k-on-pre-prompt()  { p10k display '1/(right|left/*)'=show '1/left/prompt_char'=hide }
   function p10k-on-pre-prompt()  {
     if [[ $PWD != ${POWERLEVEL9K_CD_PWD:=$PWD} ]]; then
+      POWERLEVEL9K_CD_CARRIAGE_RETURN="\r"
       POWERLEVEL9K_CD_SYMBOL_GOTO=$'\uf432'
       POWERLEVEL9K_CD_SYMBOL_HOME=$'\uf015'
       POWERLEVEL9K_CD_RESULT=${PWD/#${HOME}/\~}
@@ -1631,7 +1632,7 @@
         POWERLEVEL9K_CD_RESULT=$POWERLEVEL9K_CD_SYMBOL_HOME
       fi
       POWERLEVEL9K_CD_PREFIX="$fg[green]${POWERLEVEL9K_CD_SYMBOL_GOTO}$fg[white]"
-      echo "$POWERLEVEL9K_CD_PREFIX $POWERLEVEL9K_CD_RESULT"
+      echo "$POWERLEVEL9K_CD_CARRIAGE_RETURN$POWERLEVEL9K_CD_PREFIX $POWERLEVEL9K_CD_RESULT"
       typeset -g POWERLEVEL9K_CD_PWD=$PWD
     fi
     p10k display '1/(right|left/*)'=show '1/left/prompt_char'=hide
