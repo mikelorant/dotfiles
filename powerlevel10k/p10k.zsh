@@ -1598,9 +1598,14 @@
       # words[1] is the command, words[2] is the first argument, etc.
       local words=("${(@Q)${(@Z+C+)POWERLEVEL9K_ZOXIDE_BUFFER}}")
       if [[ $words[1] == cdd ]]; then
-        POWERLEVEL9K_ZOXIDE_SYMBOL=$'\ufc32'
+        POWERLEVEL9K_ZOXIDE_SYMBOL_GOTO=$'\ufc32'
+        POWERLEVEL9K_ZOXIDE_SYMBOL_HOME=$'\uf015'
         POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query ${words[@]:1} 2>&1 )
-        zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL $POWERLEVEL9K_ZOXIDE_RESULT"
+        POWERLEVEL9K_ZOXIDE_RESULT=${POWERLEVEL9K_ZOXIDE_RESULT/#${HOME}/\~}
+        if [[ $POWERLEVEL9K_ZOXIDE_RESULT == "~" ]]; then
+          POWERLEVEL9K_ZOXIDE_RESULT=$POWERLEVEL9K_ZOXIDE_SYMBOL_HOME
+        fi
+        zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL_GOTO $POWERLEVEL9K_ZOXIDE_RESULT"
         typeset -g POWERLEVEL9K_ZOXIDE_VISIBLE=true
       else
         if [[ $POWERLEVEL9K_ZOXIDE_VISIBLE == true ]]; then
