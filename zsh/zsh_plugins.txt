@@ -1,8 +1,8 @@
-zsh-users/zsh-autosuggestions
-zdharma/fast-syntax-highlighting
-romkatv/powerlevel10k
-hlissner/zsh-autopair
-aloxaf/fzf-tab
-olets/zsh-abbr
 ael-code/zsh-colored-man-pages
+aloxaf/fzf-tab
+hlissner/zsh-autopair
+olets/zsh-abbr
+romkatv/powerlevel10k
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
