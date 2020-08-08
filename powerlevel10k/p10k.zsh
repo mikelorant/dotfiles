@@ -1611,7 +1611,16 @@
     fi
   }
 
-  function p10k-on-pre-prompt()  { p10k display '1/(right|left/*)'=show '1/left/prompt_char'=hide }
+  # function p10k-on-pre-prompt()  { p10k display '1/(right|left/*)'=show '1/left/prompt_char'=hide }
+  function p10k-on-pre-prompt()  {
+    if [[ $PWD != ${POWERLEVEL9K_CD_PWD:=$PWD} ]]; then
+      POWERLEVEL9K_CD_SYMBOL=$'\uf432'
+      echo "$fg[green]${POWERLEVEL9K_CD_SYMBOL}$fg[white] $PWD"
+      typeset -g POWERLEVEL9K_CD_PWD=$PWD
+    fi
+    p10k display '1/(right|left/*)'=show '1/left/prompt_char'=hide
+  }
+
   function p10k-on-post-prompt() { p10k display '1/(right|left/*)'=hide '1/left/prompt_char'=show }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
