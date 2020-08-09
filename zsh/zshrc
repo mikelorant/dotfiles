@@ -13,9 +13,9 @@ source <(antibody init)
 
 antibody bundle < ~/.zsh_plugins.txt
 
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh # p10k configuration
-[ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh # fresh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                         # p10k configuration
+[ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                 # fresh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                           # fzf
 [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh # iterm2
 # [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
 
@@ -46,10 +46,10 @@ bindkey "^[[A"    history-substring-search-up
 bindkey "^[[B"    history-substring-search-down
 
 # environmental variables
-# export PATH="$( gem environment gemdir )/bin:$PATH" # add path for ruby gem binaries
+# export PATH="$( gem environment gemdir )/bin:$PATH"  # add path for ruby gem binaries
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH" # add path for ruby gem binaries
-export PATH="/usr/local/opt/ruby/bin:$PATH" # add path for ruby
-export PATH="/usr/local/sbin:$PATH" # add path for homebrew
+export PATH="/usr/local/opt/ruby/bin:$PATH"            # add path for ruby
+export PATH="/usr/local/sbin:$PATH"                    # add path for homebrew
 
 export CLICOLOR=1                      # enable colours in terminal
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD # colour settings for ls
