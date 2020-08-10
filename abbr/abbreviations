@@ -1,5 +1,5 @@
 abbr afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-abbr ip="dig +short myip.opendns.com @resolver1.opendns.com"
+abbr ip="dig @1.1.1.1 ch txt whoami.cloudflare +short"
 abbr k="kubectl"
 abbr ll="ls -l"
 abbr ltr="ls -ltr"
