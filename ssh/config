@@ -11,7 +11,12 @@ IdentityFile   ~/.ssh/ffxwhite_cloudformation
 IdentityFile   ~/.ssh/white_id_dsa
 
 Host *.ffxblue.com.au
-  User        ubuntu
+  User ubuntu
+
+Host 10.44.*
+  User ubuntu		
+  UserKnownHostsFile /dev/null
+  LogLevel QUIET
 
 Host azrael
   User mikel
