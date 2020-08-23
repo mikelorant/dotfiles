@@ -72,8 +72,8 @@ alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
 alias nano="nano -w"
 
 function iterm2-kubernetes-context() { it2setkeylabel set status "Context: $( awk '$1 == "current-context:" {print $2}' ~/.kube/config )"; }
-function fzf-tab-expand-or-menu() { if [[ $_lastcomp[nmatches] -ge 5 ]]; then fzf-tab-complete; else zle complete-word; fi }
-function fzf-tab-partial-and-complete() { if [[ $LASTWIDGET = 'fzf-tab-partial-and-complete' ]]; then fzf-tab-expand-or-menu; else zle complete-word; fi }
+function fzf-tab-expand-or-menu() { if [[ $_lastcomp[nmatches] -ge 5 || -z $CURRENTWORD ]]; then fzf-tab-complete; else zle complete-word; fi }
+function fzf-tab-partial-and-complete() { CURRENTWORD="${LBUFFER/* /}${RBUFFER/ */}"; if [[ $LASTWIDGET = 'fzf-tab-partial-and-complete' || -z $CURRENTWORD ]]; then fzf-tab-expand-or-menu; else zle complete-word; fi }
 function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink -f ${@: -1} ) ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
 function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history; zle set-local-history 0; }
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
