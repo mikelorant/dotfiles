@@ -69,7 +69,6 @@ alias cat="bat"
 alias df="df -blh"
 alias grep="grep --color=auto"
 alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
-alias nano="nano -w"
 
 function iterm2-kubernetes-context() { it2setkeylabel set status "Context: $( awk '$1 == "current-context:" {print $2}' ~/.kube/config )"; }
 function fzf-tab-expand-or-menu() { if [[ $_lastcomp[nmatches] -ge 5 || -z $CURRENTWORD ]]; then fzf-tab-complete; else zle complete-word; fi }

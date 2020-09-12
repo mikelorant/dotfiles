@@ -1,2 +1,10 @@
+set autoindent
+set mouse
 set nowrap
 set tabsize 4
+set tabstospaces
+
+bind M-B prevword main
+bind M-F nextword main
+
+include "/usr/local/Cellar/nanorc/2020.1.25/share/nanorc/*.nanorc"
