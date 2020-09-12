@@ -86,4 +86,6 @@ zle -N down-line-or-history
 
 add-zsh-hook precmd iterm2-kubernetes-context
 
+zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
+
 [[ ${ITERM_SESSION_ID:3:1} -eq 0 && -x $(command -v neofetch) ]] && neofetch || true
