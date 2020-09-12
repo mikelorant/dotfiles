@@ -4,6 +4,13 @@ set nowrap
 set tabsize 4
 set tabstospaces
 
+set titlecolor brightwhite,blue
+set statuscolor brightyellow
+set errorcolor brightred
+set selectedcolor brightwhite,magenta
+set keycolor cyan
+set functioncolor green
+
 bind M-B prevword main
 bind M-F nextword main
 
