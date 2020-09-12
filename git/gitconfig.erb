@@ -21,3 +21,5 @@
 [alias]
 	# https://www.xspdf.com/help/50940888.html
 	parent = ! git show-branch -a | grep '\\*' | grep -v `git rev-parse --abbrev-ref HEAD` | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'
+[remote "origin"]
+	tagopt = --no-tags
