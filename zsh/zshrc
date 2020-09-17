@@ -34,11 +34,12 @@ SAVEHIST=$HISTSIZE
 ## History command configuration
 setopt HIST_IGNORE_ALL_DUPS # history ignore duplicates
 setopt HIST_IGNORE_SPACE    # history ignore commands with leading space
-setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line being added to the history list
+setopt HIST_REDUCE_BLANKS   # remove superfluous blanks from each command line being added to the history list
 setopt SHARE_HISTORY        # shared history between sessions
 
 setopt INTERACTIVECOMMENTS  # allow interactive comments
 setopt TRANSIENT_RPROMPT    # remove any right prompt from display when accepting a command line
+setopt COMPLETE_IN_WORD     # completion is done from both ends
 
 # keyboard bindings
 bindkey "^[[3~"   delete-char
