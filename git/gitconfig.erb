@@ -3,23 +3,24 @@
 <% domain = %x(hostname).partition('.').last.chomp %>
 <% domain = 'fairfaxmedia.com.au' %>
 [user]
-	name = <%= name %>
-	email = <%= user %>@<%= domain %>
+    name = <%= name %>
+    email = <%= user %>@<%= domain %>
 [push]
-	default = current
+    default = current
 [pull]
-	ff = only
+    ff = only
 [diff]
-	colormoved = default
+    colormoved = default
 [core]
-	pager = delta
+    pager = delta
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [delta]
-	syntax-theme = Dracula
-	features = diff-so-fancy line-numbers
+    syntax-theme = Dracula
+    features = diff-so-fancy line-numbers
 [alias]
 	# https://www.xspdf.com/help/50940888.html
-	parent = ! git show-branch -a | grep '\\*' | grep -v `git rev-parse --abbrev-ref HEAD` | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'
+    parent = ! git show-branch -a | grep '\\*' | grep -v `git rev-parse --abbrev-ref HEAD` | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'
+    untag = ! git tag -l | xargs git tag -d
 [remote "origin"]
-	tagopt = --no-tags
+    tagopt = --no-tags
