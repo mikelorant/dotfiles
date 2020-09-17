@@ -1,19 +1,21 @@
 # -*- mode: shell-script -*-
 
-# zprof
+## profiling
 zmodload zsh/zprof
 
+## instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# completion
+## completion
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then compinit; else compinit -C; fi
 
+## plugins
 source <(antibody init)
 
 antibody bundle < ~/.zsh_plugins.txt
@@ -27,12 +29,12 @@ antibody bundle < ~/.zsh_plugins.txt
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
 
-## History file configuration
+## history file
 HISTFILE=~/.zhistory
 HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 
-## History command configuration
+## history command
 setopt HIST_IGNORE_ALL_DUPS # history ignore duplicates
 setopt HIST_IGNORE_SPACE    # history ignore commands with leading space
 setopt HIST_REDUCE_BLANKS   # remove superfluous blanks from each command line being added to the history list
@@ -43,7 +45,7 @@ setopt TRANSIENT_RPROMPT    # remove any right prompt from display when acceptin
 setopt COMPLETE_IN_WORD     # completion is done from both ends
 setopt ALWAYS_TO_END        # the cursor is moved to the end of the word if either a single match is inserted or menu completion is performed
 
-# keyboard bindings
+## keyboard bindings
 bindkey "^[[3~"   delete-char
 bindkey "^[3;5~"  delete-char
 bindkey "^I"      fzf-tab-partial-and-complete
@@ -51,7 +53,7 @@ bindkey "^U"      backward-kill-line # https://github.com/gableroux/iterm2-macos
 bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
 
-# environmental variables
+## environmental variables
 # export PATH="$( gem environment gemdir )/bin:$PATH"  # add path for ruby gem binaries
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH" # add path for ruby gem binaries
 export PATH="/usr/local/opt/ruby/bin:$PATH"            # add path for ruby
@@ -70,12 +72,13 @@ export LS_COLORS="$(vivid generate jellybeans)" # generate a LS_COLORS expressio
 # export LS_COLORS="di=36:ln=35:so=31;1;44:pi=30;1;44:ex=1;31:bd=0;1;44:cd=37;1;44:su=37;1;41:sg=30;1;43:tw=30;1;42:ow=30;1;43"
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
 
-# aliases
+## aliases
 alias cat="bat"
 alias df="df -blh"
 alias grep="grep --color=auto"
 alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
 
+## functions
 function iterm2-kubernetes-context() { it2setkeylabel set status "Context: $( awk '$1 == "current-context:" {print $2}' ~/.kube/config )"; }
 function fzf-tab-expand-or-menu() { if [[ $_lastcomp[nmatches] -ge 5 || -z $CURRENTWORD ]]; then fzf-tab-complete; else zle complete-word; fi }
 function fzf-tab-partial-and-complete() { CURRENTWORD="${LBUFFER/* /}${RBUFFER/ */}"; if [[ $LASTWIDGET = 'fzf-tab-partial-and-complete' || -z $CURRENTWORD ]]; then fzf-tab-expand-or-menu; else zle complete-word; fi }
@@ -83,6 +86,7 @@ function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink 
 function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history; zle set-local-history 0; }
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
 
+## zle
 zle -N fzf-tab-partial-and-complete
 zle -N up-line-or-history
 zle -N down-line-or-history
