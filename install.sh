@@ -2,10 +2,10 @@
 
 export FRESH_LOCAL_SOURCE=mikelorant/dotfiles
 
-# /usr/bin/xcode-select -p || /usr/bin/xcode-select --install
-# 
-# echo "After Xcode Command Line Developer Tools has installed press enter."
-# read
+/usr/bin/xcode-select -p || /usr/bin/xcode-select --install
+
+echo "After Xcode Command Line Developer Tools has installed press enter."
+read
 
 [ -f $HOME/.ssh/id_rsa ] || ssh-keygen -f $HOME/.ssh/id_rsa -C $(id -un)
 
