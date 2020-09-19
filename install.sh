@@ -28,9 +28,10 @@ brew bundle --verbose
 
 cd $HOME
 bin/fresh
+cd -
 
 iterm2/iterm2.sh --init
 
 which atom && apm stars --install
 
-gem install -g Gemfile
+which gem && gem install -g Gemfile
