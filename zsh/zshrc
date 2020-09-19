@@ -76,6 +76,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
 alias cat="bat"
 alias df="df -blh"
 alias grep="grep --color=auto"
+alias less="bat --paging=auto"
 alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
 
 ## functions
