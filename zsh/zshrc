@@ -59,6 +59,7 @@ export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH" # add path for ruby gem b
 export PATH="/usr/local/opt/ruby/bin:$PATH"            # add path for ruby
 export PATH="/usr/local/sbin:$PATH"                    # add path for homebrew
 
+export _ZO_EXCLUDE_DIRS=$HOME
 export ABBR_AUTOLOAD=0                          # disable updates to the user abbrevations file
 export ABBR_QUIET=1                             # enable abbr quiet mode
 export CLICOLOR=1                               # enable colours in terminal
