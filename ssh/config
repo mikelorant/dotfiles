@@ -21,3 +21,11 @@ Host 10.44.*
 Host azrael
   User mikel
   Hostname azrael.mlvision.com.au
+
+host i-* mi-*
+  User ubuntu
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+
+host ip-10-44-*
+  User ubuntu
+  ProxyCommand sh -c "aws ssm start-session --target $( aws ec2 describe-instances --filters 'Name=private-dns-name,Values=%h' --output text --query 'Reservations[*].Instances[*].InstanceId' ) --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
