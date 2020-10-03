@@ -10,7 +10,8 @@
 
 fresh freshshell/fresh bin/fresh --bin
 fresh abbr/* --file=~/.config/zsh/abbreviations
-fresh atom/* --file=~/.atom/config.cson
+fresh atom/config.cson --file=~/.atom/config.cson
+fresh atom/styles.less --file=~/.atom/styles.less
 fresh awscli/* --file=~/.aws/config
 fresh bat/* --file=~/.config/bat/config
 fresh git/* --file=~/.gitconfig --filter='erb -T 2'

@@ -1,0 +1,16 @@
+// Import styleguide colors
+@import 'ui-variables';
+// indent-guide-improved settings
+.indent-guide-improved {
+  background-color: @background-color-highlight;
+  &.indent-guide-stack {
+    background-color: fadeout(@text-color-info, 50%);
+    &.indent-guide-active {
+      background-color: fadeout(@background-color-success, 50%);
+    }
+  }
+}
+
+.minimap .cursor-line {
+  background: purple;
+}
