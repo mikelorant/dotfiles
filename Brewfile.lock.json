@@ -8,7 +8,7 @@
         "revision": "2a29a7c4d685e55d2667c140e97d1b335aa1ee54"
       },
       "mikelorant/custom": {
-        "revision": "174c03ff7f2875d82e3e1fb60da63b59e0d66f8b"
+        "revision": "49ae28c661ce95d30639160929eb5743a1956b76"
       },
       "romkatv/powerlevel10k": {
         "revision": "06ad7f48760247bbb5fed8b8764e1fdc461ed8a2"
@@ -32,7 +32,7 @@
         "revision": "b05efbed66ba9dfb95d3dc3a71c672dc577664ca"
       },
       "fairwindsops/tap": {
-        "revision": "8cdc53bdb2929bd6075ae3fa28f56717db77e00f"
+        "revision": "5e10c5de6c14e94d03793201cf6250e4e65520cc"
       }
     },
     "brew": {
@@ -1361,7 +1361,7 @@
         "bottle": false
       },
       "pluto": {
-        "version": "3.4.1",
+        "version": "3.5.1",
         "bottle": false
       },
       "nano": {
@@ -1527,7 +1527,7 @@
         }
       },
       "macs-fan-control": {
-        "version": "1.5.7",
+        "version": "1.5.8",
         "options": {
           "full_name": "macs-fan-control"
         }
@@ -1611,7 +1611,7 @@
         }
       },
       "zoomus": {
-        "version": "5.3.52651.0920",
+        "version": "5.3.52877.0927",
         "options": {
           "full_name": "zoomus"
         }
@@ -1623,7 +1623,7 @@
         }
       },
       "microsoft-teams": {
-        "version": "1.3.00.18164",
+        "version": "1.3.00.24758",
         "options": {
           "full_name": "microsoft-teams"
         }
@@ -1693,6 +1693,18 @@
         "options": {
           "full_name": "numi"
         }
+      },
+      "steam": {
+        "version": "latest",
+        "options": {
+          "full_name": "steam"
+        }
+      },
+      "shifted": {
+        "version": "18",
+        "options": {
+          "full_name": "shifted"
+        }
       }
     },
     "mas": {
@@ -1706,9 +1718,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.2-41-g9fbe13c",
+        "HOMEBREW_VERSION": "2.5.2-51-gdc09aa6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "69b5f7e5feb295fcb0b7d17209535940338b25cc",
+        "Homebrew/homebrew-core": "0b6544fedc9e2232a12826922dfc3b12872ff410",
         "CLT": "1103.0.32.62",
         "Xcode": "11.5",
         "macOS": "10.15.6"
