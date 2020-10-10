@@ -1,5 +1,9 @@
 # 🏠 dotfiles
 
+![Last Commit](<https://img.shields.io/github/last-commit/mikelorant/dotfiles>)
+![License](<https://img.shields.io/github/license/mikelorant/dotfiles>)
+![Repo Size](<https://img.shields.io/github/repo-size/mikelorant/dotfiles>)
+
 This is where I keep the configuration for setting up a functional macOS
 environment. I have tailored the setup for a working in the devops space with a
 clear focus on the terminal.
@@ -49,7 +53,7 @@ impossible to live without.
 - [Fish](<https://fishshell.com/>) style autosuggestions with the [zsh-autosuggestions](<https://github.com/zsh-users/zsh-autosuggestions>) plugin.
 - Prompt segments with [Powerlevel10k](<https://github.com/romkatv/powerlevel10k>) theme.
 - Extensive use of tab completion for commands, arguments and directory navigation.
-- Integration of a [fzf](<https://github.com/junegunn/fzf>) into most commands for fuzzy finding.
+- Integration of [fzf](<https://github.com/junegunn/fzf>) into most commands for fuzzy finding.
 
 ## 🛠 Tools
 
