@@ -62,6 +62,7 @@ export PATH="/usr/local/sbin:$PATH"                    # add path for homebrew
 export _ZO_EXCLUDE_DIRS=$HOME
 export ABBR_AUTOLOAD=0                          # disable updates to the user abbrevations file
 export ABBR_QUIET=1                             # enable abbr quiet mode
+export HOMEBREW_NO_AUTO_UPDATE=1                # do not automatically update before running
 export CLICOLOR=1                               # enable colours in terminal
 export DIRENV_LOG_FORMAT=                       # disable direnv output
 export EDITOR=nano                              # default editor nano
