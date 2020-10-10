@@ -5,7 +5,7 @@
 ![Repo Size](<https://img.shields.io/github/repo-size/mikelorant/dotfiles>)
 
 This is where I keep the configuration for setting up a functional macOS
-environment. I have tailored the setup for a working in the devops space with a
+environment. I have tailored the setup for working in the devops space with a
 clear focus on the terminal.
 
 It is never too useful to install someone elses dotfiles, however there is a
