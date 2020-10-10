@@ -64,7 +64,7 @@ predominantly use.
 - [LSD](<https://github.com/Peltoche/lsd>) is a modern replacement for the familar `ls`.
 - [Delta](<https://github.com/dandavison/delta>) is an evolution of `diff`.
 - [Bat](<https://github.com/sharkdp/bat>) is a replacement for both `cat` and `less`.
-- [Gitmoji](<https://github.com/carloscuesta/gitmoji>) is both a convenient and fun way to improvement [Git](<https://git-scm.com/>) commit quality.
+- [Gitmoji](<https://github.com/carloscuesta/gitmoji>) is both a convenient and fun way to improve [Git](<https://git-scm.com/>) commit quality.
 - [Zoxide](<https://github.com/ajeetdsouza/zoxide>) is an alternative directory traversal method to the traditional `cd`.
 
 One clearly common theme in these tools is the the addition of colour and
