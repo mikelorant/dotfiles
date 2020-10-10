@@ -1,12 +1,10 @@
 "*":
-  "Sublime-Style-Column-Selection":
-    mouseButtonTrigger: "Middle"
-    selectKeyTrigger: "None"
+  "Sublime-Style-Column-Selection": {}
   core:
     disabledPackages: [
       "exception-reporting"
     ]
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "dracula-syntax"
@@ -14,8 +12,18 @@
   editor:
     fontFamily: "JetBrainsMono Nerd Font"
     preferredLineLength: 120
+  "file-icons":
+    onChanges: true
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
   "open-files":
     collapsable: false
   "tree-view": {}
+  "tree-view-autoresize":
+    minimumWidth: 200
   welcome:
     showOnStartup: false
