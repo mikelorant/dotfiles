@@ -8,8 +8,6 @@ tap "mikelorant/custom"
 tap "nvie/tap"
 tap "versent/taps"
 
-
-
 brew "antibody"
 brew "aria2"
 brew "asciinema"
