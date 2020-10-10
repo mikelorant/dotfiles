@@ -12,7 +12,13 @@ maintainable environment.
 
 ![](<https://d.pr/i/eCHQ6k.gif>)
 
-\[TOC\]
+ * [<g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji> Story](#-story)
+ * [<g-emoji class="g-emoji" alias="trophy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">🏆</g-emoji> Improvements](#-improvements)
+ * [<g-emoji class="g-emoji" alias="hammer_and_wrench" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png">🛠</g-emoji> Tools](#-tools)
+ * [<g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji> Installation](#-installation)
+ * [<g-emoji class="g-emoji" alias="rainbow" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f308.png">🌈</g-emoji> Customisation](#-customisation)
+ * [<g-emoji class="g-emoji" alias="memo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png">📝</g-emoji> License](#-license)
+ * [<g-emoji class="g-emoji" alias="flashlight" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png">🔦</g-emoji> About](#-about)
 
 ## 📖 Story
 
