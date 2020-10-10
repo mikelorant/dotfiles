@@ -4,7 +4,7 @@
 
 This repository contains the configuration for setting up a functional macOS environment. The configuration is tailored for users working in the devops space with a clear focus on the terminal.
 
-![](https://d.pr/i/baHr5N.gif)
+![](https://d.pr/i/eCHQ6k.gif)
 
 ## Install
 
