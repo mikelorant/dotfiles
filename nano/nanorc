@@ -13,4 +13,4 @@ set functioncolor green
 bind M-B prevword main
 bind M-F nextword main
 
-include "/usr/local/Cellar/nanorc/2020.1.25/share/nanorc/*.nanorc"
+include "/usr/local/Cellar/nanorc/2020.10.10/share/nanorc/*.nanorc"
