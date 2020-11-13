@@ -8,10 +8,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-## completion
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then compinit; else compinit -C; fi
 
@@ -88,6 +84,11 @@ function fzf-tab-partial-and-complete() { CURRENTWORD="${LBUFFER/* /}${RBUFFER/ 
 function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink -f ${@: -1} ) ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
 function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history; zle set-local-history 0; }
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
+
+## zstyle
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
 ## zle
 zle -N fzf-tab-partial-and-complete
