@@ -5,6 +5,9 @@
 # Set tilesize (default 40)
 defaults write com.apple.dock tilesize -int 40
 
+# Lock dock size (default false)
+defaults write com.apple.dock size-immutable -bool true
+
 dockutil --no-restart --remove all
 
 # Default Apps
