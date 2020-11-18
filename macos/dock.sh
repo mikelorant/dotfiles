@@ -33,14 +33,18 @@ dockutil --no-restart --section apps --add "/System/Applications/Launchpad.app"
 dockutil --no-restart --section apps --add "/System/Applications/System Preferences.app"
 
 # Custom Apps
+dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/Firefox.app"
 dockutil --no-restart --section apps --add "/Applications/iTerm.app"
 dockutil --no-restart --section apps --add "/Applications/Atom.app"
-dockutil --no-restart --section apps --add "/Applications/1Password 7.app"
-dockutil --no-restart --section apps --add "/Applications/Authy Desktop.app"
-dockutil --no-restart --section apps --add "/Applications/Beyond Compare.app"
+
+dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/Slack.app"
 dockutil --no-restart --section apps --add "/Applications/Discord.app"
+
+dockutil --no-restart --section apps --type spacer --add ""
+dockutil --no-restart --section apps --add "/Applications/1Password 7.app"
+dockutil --no-restart --section apps --add "/Applications/Authy Desktop.app"
 
 # Default Others
 dockutil --no-restart --section others --add "${HOME}/Downloads" --view fan --display stack --sort dateadded
