@@ -129,7 +129,7 @@ cask "transmission-remote-gui"
 cask "typora"
 cask "viscosity"
 cask "visual-studio-code"
-cask "zoomus"
+cask "zoom"
 
 mas "amphetamine", id: 937984704
 mas "microsoft-remote-desktop", id: 715768417
