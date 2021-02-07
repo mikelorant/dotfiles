@@ -1,4 +1,3 @@
-gem 'bundler'
 gem 'bundler', '~>1.17'
 gem 'sfn'
 gem 'gemfury'

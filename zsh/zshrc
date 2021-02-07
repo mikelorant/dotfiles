@@ -52,7 +52,7 @@ bindkey "^X^_"    redo
 ## environmental variables
 # export PATH="$( gem environment gemdir )/bin:$PATH"  # add path for ruby gem binaries
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH" # add path for ruby gem binaries
-export PATH="/usr/local/opt/ruby/bin:$PATH"            # add path for ruby
+export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"        # add path for ruby
 export PATH="/usr/local/sbin:$PATH"                    # add path for homebrew
 
 export _ZO_EXCLUDE_DIRS=$HOME
