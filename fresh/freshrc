@@ -24,6 +24,10 @@ fresh saml2aws/* --file
 fresh ssh/* --file=~/.ssh/config
 fresh zsh/* --file
 
+for i in "$FRESH_LOCAL/iterm2/graphic/"*; do
+  fresh iterm2/graphic/$(basename "$i") --file="~/Library/Application Support/iTerm2/$(basename "$i")"
+done
+
 fresh_after_build() {
   [ -L ~/.kube/kubectl_external_diff.sh ] && chmod +x $(readlink ~/.kube/kubectl_external_diff.sh)
 }
