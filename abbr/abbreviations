@@ -1,4 +1,6 @@
 abbr afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+abbr helm2="helmswitch 2.17.0"
+abbr helm3="helmswitch 3.6.3"
 abbr ip="dig +short myip.opendns.com @resolver1.opendns.com"
 abbr k="kubectl"
 abbr ll="ls -l"
