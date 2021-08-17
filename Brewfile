@@ -37,9 +37,8 @@ brew "gnu-tar"
 brew "gomplate"
 brew "goreleaser"
 brew "gron"
-brew "helm", link: false
 brew "helm-switcher"
-brew "helmfile"
+brew "helmfile", args: ["ignore-dependencies"]
 brew "hyperfine"
 brew "istioctl"
 brew "jp"
@@ -47,16 +46,15 @@ brew "jq"
 brew "kafka"
 brew "kafkacat"
 brew "kbenv"
-brew "kops"
-brew "krew"
+brew "kops", args: ["ignore-dependencies"]
+brew "krew", args: ["ignore-dependencies"]
 brew "kube-yaml-sort"
-brew "kubernetes-cli", link: false
 brew "kubeval"
 brew "kustomize"
 brew "less"
 brew "lsd"
 brew "mas"
-brew "minikube"
+brew "minikube", args: ["ignore-dependencies"]
 brew "mtr"
 brew "multi-git-status"
 brew "nano"
