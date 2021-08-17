@@ -15,6 +15,7 @@ fresh atom/styles.less --file=~/.atom/styles.less
 fresh awscli/* --file=~/.aws/config
 fresh bat/* --file=~/.config/bat/config
 fresh git/* --file=~/.gitconfig --filter="erb -T 2"
+fresh kbenv/* --file=~/.bin/.kubectl-version
 fresh kubectl/* --file=~/.kube/kubectl_external_diff.sh
 fresh nano/* --file
 fresh neofetch/* --file=~/.config/neofetch/config.conf
