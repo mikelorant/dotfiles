@@ -44,7 +44,6 @@ dockutil --no-restart --section apps --add "/Applications/Discord.app"
 
 dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/1Password 7.app"
-dockutil --no-restart --section apps --add "/Applications/Authy Desktop.app"
 
 # Default Others
 dockutil --no-restart --section others --add "${HOME}/Downloads" --view fan --display stack --sort dateadded
