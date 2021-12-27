@@ -150,5 +150,4 @@ mas "amphetamine", id: 937984704
 mas "microsoft-remote-desktop", id: 715768417
 mas "parcel", id: 639968404
 mas "peakhour", id: 961578824
-mas "telephone", id: 406825478
 mas "tot", id: 1491071483
