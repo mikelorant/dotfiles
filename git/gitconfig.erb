@@ -22,5 +22,6 @@
 	# https://www.xspdf.com/help/50940888.html
     parent = ! git show-branch -a | grep '\\*' | grep -v `git rev-parse --abbrev-ref HEAD` | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'
     untag = ! git tag -l | xargs git tag -d
+    basename = ! basename `git config --get remote.origin.url` .git
 [remote "origin"]
     tagopt = --no-tags
