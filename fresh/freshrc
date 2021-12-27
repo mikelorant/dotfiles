@@ -23,6 +23,7 @@ fresh powerlevel10k/* --file
 fresh ruby/* --file
 fresh saml2aws/* --file
 fresh ssh/* --file=~/.ssh/config
+fresh yamllint/* --file=~/.config/yamllint/config
 fresh zsh/* --file
 
 for i in "$FRESH_LOCAL/iterm2/graphic/"*; do
