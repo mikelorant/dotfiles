@@ -151,7 +151,7 @@ cask "visual-studio-code"
 cask "zoom"
 
 mas "amphetamine", id: 937984704
-mas "microsoft-remote-desktop", id: 715768417
+mas "microsoft-remote-desktop", id: 1295203466
 mas "parcel", id: 639968404
 mas "peakhour", id: 961578824
 mas "smartpaste", id: 1540496001
