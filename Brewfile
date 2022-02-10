@@ -155,3 +155,4 @@ mas "microsoft-remote-desktop", id: 715768417
 mas "parcel", id: 639968404
 mas "peakhour", id: 961578824
 mas "smartpaste", id: 1540496001
+mas "sourcenotify", id: 1570433591
