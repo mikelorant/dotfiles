@@ -1,4 +1,4 @@
-tap "aerobounce/defaults.sh", "https://github.com/aerobounce/defaults.sh"
+tap "aerobounce/tap"
 tap "buo/cask-upgrade"
 tap "fairwindsops/tap"
 tap "getantibody/tap"
