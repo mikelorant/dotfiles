@@ -54,9 +54,9 @@ bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
 
 ## environmental variables
-export PATH="$HOME/go/bin:$PATH"                            # add path for go
-export PATH="/usr/local/sbin:$PATH"                         # add path for homebrew
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"         # add path for mysql-client
+export PATH="$PATH:/usr/local/sbin"                         # add path for homebrew
+export PATH="$PATH:$HOME/go/bin"                            # add path for go
+export PATH="$PATH:/usr/local/opt/mysql-client/bin"         # add path for mysql-client
 
 export _ZO_EXCLUDE_DIRS=$HOME
 export ABBR_AUTOLOAD=0                          # disable updates to the user abbrevations file
