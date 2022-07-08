@@ -54,9 +54,6 @@ bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
 
 ## environmental variables
-# export PATH="$( gem environment gemdir )/bin:$PATH"       # add path for ruby gem binaries
-export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"      # add path for ruby gem binaries
-export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"             # add path for ruby
 export PATH="/usr/local/sbin:$PATH"                         # add path for homebrew
 # export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH" # add path for findutils
 # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # add path for coreutils
