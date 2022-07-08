@@ -44,8 +44,6 @@ brew "gnu-tar"
 brew "gomplate"
 brew "goreleaser"
 brew "gron"
-brew "helm", link: false
-brew "helm-switcher"
 brew "helmfile"
 brew "hubble"
 brew "hyperfine"
