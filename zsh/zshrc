@@ -8,10 +8,12 @@ fi
 autoload -Uz compinit
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi;
 
-## plugins
-source <(antibody init)
+# plugin loader
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+. ~/.antidote/antidote.zsh
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 
-antibody bundle < ~/.zsh_plugins.txt
+antidote load
 
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                         # p10k configuration
 [ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                 # fresh
