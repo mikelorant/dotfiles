@@ -1,0 +1,22 @@
+linters:
+  enable:
+    - exportloopref
+    - gocritic
+    - gofmt
+    - gofumpt
+    - goimports
+    - ifshort
+    - makezero
+    - nestif
+    - revive
+    - whitespace
+    - nilnil
+    - errname
+    - errorlint
+    - goerr113
+    - ireturn
+  disable:
+    - deadcode
+    - errcheck
+    - structcheck
+    - unused
