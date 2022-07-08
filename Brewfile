@@ -1,6 +1,7 @@
 tap "aerobounce/tap"
 tap "aquasecurity/trivy"
 tap "buo/cask-upgrade"
+tap "danielfoehrkn/switch"
 tap "fairwindsops/tap"
 tap "getantibody/tap"
 tap "homeport/tap"
