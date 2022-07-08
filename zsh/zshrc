@@ -20,6 +20,7 @@ antibody bundle < ~/.zsh_plugins.txt
 [ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                 # fresh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                           # fzf
 [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
+[ -f /usr/local/opt/switch/switch.sh ] && source /usr/local/opt/switch/switch.sh # switch
 
 . /usr/local/opt/asdf/libexec/asdf.sh
 
