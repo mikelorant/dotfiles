@@ -48,6 +48,7 @@ brew "gron"
 brew "helm", link: false
 brew "helm-switcher"
 brew "helmfile"
+brew "hubble"
 brew "hyperfine"
 brew "istioctl"
 brew "jmespath/jmespath/jp"
