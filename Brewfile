@@ -1,4 +1,5 @@
 tap "aerobounce/tap"
+tap "aquasecurity/trivy"
 tap "buo/cask-upgrade"
 tap "fairwindsops/tap"
 tap "getantibody/tap"
