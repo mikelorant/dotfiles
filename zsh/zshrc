@@ -21,6 +21,8 @@ antibody bundle < ~/.zsh_plugins.txt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                           # fzf
 [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
 
+. /usr/local/opt/asdf/libexec/asdf.sh
+
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
 
