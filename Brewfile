@@ -12,6 +12,7 @@ tap "tokiwong/tap"
 tap "versent/taps"
 
 brew "antibody"
+brew "argocd"
 brew "aria2"
 brew "asciinema"
 brew "aws-es-proxy"
