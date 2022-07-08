@@ -11,10 +11,6 @@ fi
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then compinit; else compinit -C; fi
 
-## completions
-source <(kubectl completion zsh)
-source <(helm completion zsh)
-
 ## plugins
 source <(antibody init)
 
@@ -28,6 +24,10 @@ antibody bundle < ~/.zsh_plugins.txt
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
+
+## completions
+source <(kubectl completion zsh)
+source <(helm completion zsh)
 
 ## history file
 HISTFILE=~/.zhistory
