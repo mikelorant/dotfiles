@@ -19,8 +19,7 @@ antibody bundle < ~/.zsh_plugins.txt
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                         # p10k configuration
 [ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                 # fresh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                           # fzf
-[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh # iterm2
-# [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
+[ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
