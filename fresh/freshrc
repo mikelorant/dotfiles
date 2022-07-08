@@ -10,6 +10,8 @@
 
 fresh freshshell/fresh bin/fresh --bin
 fresh abbr/* --file=~/.config/zsh/abbreviations
+fresh asdf/asdfrc --file=~/.asdfrc
+fresh asdf/default-gems --file=~/.default-gems
 fresh atom/config.cson --file=~/.atom/config.cson
 fresh atom/styles.less --file=~/.atom/styles.less
 fresh awscli/* --file=~/.aws/config
