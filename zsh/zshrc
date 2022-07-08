@@ -26,9 +26,8 @@ antidote load
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
 
-## completions
-source <(kubectl completion zsh)
-source <(helm completion zsh)
+## extra completions
+[ ! -f ${fpath[1]}/_kubectl ] && kubectl completion zsh > ${fpath[1]}/_kubectl
 
 ## history file
 HISTFILE=~/.zhistory
