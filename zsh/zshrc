@@ -31,7 +31,7 @@ source <(helm completion zsh)
 
 ## history file
 HISTFILE=~/.zhistory
-HISTSIZE=1000000
+HISTSIZE=100000000
 SAVEHIST=$HISTSIZE
 
 ## history command
