@@ -57,7 +57,6 @@ brew "kcat"
 brew "kops"
 brew "krew"
 brew "kube-yaml-sort"
-brew "kubernetes-cli", link: false
 brew "kustomize"
 brew "less"
 brew "lsd"
