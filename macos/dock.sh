@@ -40,7 +40,6 @@ dockutil --no-restart --section apps --add "/Applications/Atom.app"
 
 dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/Slack.app"
-dockutil --no-restart --section apps --add "/Applications/Discord.app"
 
 dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/1Password 7.app"
