@@ -31,7 +31,7 @@ brew "dirstat-rs"
 brew "docker-credential-helper-ecr"
 brew "dockutil"
 brew "dog"
-brew "ds"
+brew "ds", link: false
 brew "dyff"
 brew "fd"
 brew "findutils"
