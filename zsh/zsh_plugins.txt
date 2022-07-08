@@ -1,7 +1,14 @@
-ael-code/zsh-colored-man-pages
-aloxaf/fzf-tab
-hlissner/zsh-autopair
-olets/zsh-abbr
+# prompts
 romkatv/powerlevel10k
-zdharma-continuum/fast-syntax-highlighting
+
+# priority
+aloxaf/fzf-tab
+
+# deferred
+ael-code/zsh-colored-man-pages kind:defer
+hlissner/zsh-autopair kind:defer
+olets/zsh-abbr kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+# delayed
 zsh-users/zsh-autosuggestions
