@@ -7,6 +7,7 @@ tap "getantibody/tap"
 tap "homeport/tap"
 tap "jmespath/jmespath"
 tap "mikelorant/custom"
+tap "scullionw/tap"
 tap "tokiwong/tap"
 tap "versent/taps"
 
