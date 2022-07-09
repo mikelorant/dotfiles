@@ -56,7 +56,6 @@ bindkey "^X^_"    redo
 
 ## environmental variables
 export PATH="$PATH:/usr/local/sbin"                         # add path for homebrew
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"      # add path for grep
 export PATH="$PATH:$HOME/go/bin"                            # add path for go
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"         # add path for mysql-client
 
