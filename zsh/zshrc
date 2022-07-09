@@ -74,6 +74,7 @@ export LS_COLORS="$(vivid generate jellybeans)" # generate a LS_COLORS expressio
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
 
 ## aliases
+alias as="asdf shell"
 alias cat="bat"
 alias df="df -blh"
 alias grep="grep --color=auto"
