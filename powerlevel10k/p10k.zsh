@@ -1701,7 +1701,7 @@
         if [[ $POWERLEVEL9K_ZOXIDE_RESULT == "~" ]]; then
           POWERLEVEL9K_ZOXIDE_RESULT=$POWERLEVEL9K_ZOXIDE_SYMBOL_HOME
         fi
-        if [[ $POWERLEVEL9K_ZOXIDE_RESULT == "Error: no match found" ]]; then
+        if [[ $POWERLEVEL9K_ZOXIDE_RESULT == "zoxide: no match found" ]]; then
           zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL_ERROR $POWERLEVEL9K_ZOXIDE_RESULT"
         else
           zle -M "$POWERLEVEL9K_ZOXIDE_SYMBOL_GOTO $POWERLEVEL9K_ZOXIDE_RESULT"
