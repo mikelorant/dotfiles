@@ -44,6 +44,7 @@ setopt INTERACTIVECOMMENTS  # allow interactive comments
 setopt TRANSIENT_RPROMPT    # remove any right prompt from display when accepting a command line
 setopt COMPLETE_IN_WORD     # completion is done from both ends
 setopt ALWAYS_TO_END        # the cursor is moved to the end of the word if either a single match is inserted or menu completion is performed
+setopt LIST_PACKED          # try to make the completion list smaller by printing the matches in columns with different widths
 
 ## keyboard bindings
 bindkey "^[[3~"   delete-char
