@@ -100,6 +100,7 @@ zle -N fzf-tab-partial
 zle -N up-line-or-history
 zle -N down-line-or-history
 
-zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
+# conflict with zsh-autosuggestions
+# zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
 
 [[ ${ITERM_SESSION_ID:3:1} -eq 0 && -x $(command -v neofetch) ]] && neofetch || true
