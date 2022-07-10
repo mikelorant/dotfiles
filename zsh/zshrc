@@ -92,9 +92,9 @@ function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
 
 ## zstyle
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}        # use ls colors
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' # case insensitive
+zstyle ':completion:*' menu select                           # menu select
 
 ## zle
 zle -N fzf-tab-partial
