@@ -1696,7 +1696,11 @@
         POWERLEVEL9K_ZOXIDE_SYMBOL_GOTO=$'\ufc32'
         POWERLEVEL9K_ZOXIDE_SYMBOL_HOME=$'\uf015'
         POWERLEVEL9K_ZOXIDE_SYMBOL_ERROR=$'\uf12a'
-        POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query ${words[@]:1} 2>&1 )
+        local query=${words[@]:1}
+        if [[ ${#words[@]} -ge 3 ]]; then
+          query=${query#*z\#}
+        fi
+        POWERLEVEL9K_ZOXIDE_RESULT=$( zoxide query ${query} 2>&1 )
         POWERLEVEL9K_ZOXIDE_RESULT=${POWERLEVEL9K_ZOXIDE_RESULT/#${HOME}/\~}
         if [[ $POWERLEVEL9K_ZOXIDE_RESULT == "~" ]]; then
           POWERLEVEL9K_ZOXIDE_RESULT=$POWERLEVEL9K_ZOXIDE_SYMBOL_HOME
