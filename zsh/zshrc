@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -Uz compinit
+autoload -Uz compinit bracketed-paste-magic
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi;
 
 # plugin loader
@@ -93,16 +93,17 @@ function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
 
 ## zstyle
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}        # use ls colors
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' # case insensitive
-zstyle ':completion:*' menu select                           # menu select
+zstyle ':completion:*'          list-colors ${(s.:.)LS_COLORS}        # use ls colors
+zstyle ':completion:*'          matcher-list '' 'm:{a-zA-Z}={A-Za-z}' # case insensitive
+zstyle ':completion:*'          menu select                           # menu select
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'              # fixes slow paste
 
 ## zle
 zle -N fzf-tab-partial
 zle -N up-line-or-history
 zle -N down-line-or-history
+zle -N bracketed-paste bracketed-paste-magic
 
-# conflict with zsh-autosuggestions
-# zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
+zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
 
 [[ ${ITERM_SESSION_ID:3:1} -eq 0 && -x $(command -v neofetch) ]] && neofetch || true
