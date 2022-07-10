@@ -74,6 +74,7 @@ export LS_COLORS="$(vivid generate jellybeans)" # generate a LS_COLORS expressio
 # export LS_COLORS="di=36:ln=35:so=31;1;44:pi=30;1;44:ex=1;31:bd=0;1;44:cd=37;1;44:su=37;1;41:sg=30;1;43:tw=30;1;42:ow=30;1;43"
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
 export ZSH_AUTOSUGGEST_USE_ASYNC=               # disable autosuggestion async
+export ZSH_AUTOSUGGEST_CLEAR_WIDGETS=($ZSH_AUTOSUGGEST_CLEAR_WIDGETS fzf-tab-partial)
 export LISTMAX=0                                # number of matches to list without asking first
 export _ZO_EXCLUDE_DIRS=$HOME
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"
