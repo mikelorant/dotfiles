@@ -54,29 +54,29 @@ bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
 
 ## environmental variables
-export PATH="$PATH:/usr/local/sbin"                         # add path for homebrew
-export PATH="$PATH:$HOME/go/bin"                            # add path for go
-export PATH="$PATH:/usr/local/opt/mysql-client/bin"         # add path for mysql-client
+export PATH="$PATH:/usr/local/sbin"                       # add path for homebrew
+export PATH="$PATH:$HOME/go/bin"                          # add path for go
+export PATH="$PATH:/usr/local/opt/mysql-client/bin"       # add path for mysql-client
 
-export ABBR_AUTOLOAD=0                          # disable updates to the user abbrevations file
-export ABBR_QUIET=1                             # enable abbr quiet mode
-export HOMEBREW_NO_AUTO_UPDATE=1                # do not automatically update before running
-export CLICOLOR=1                               # enable colours in terminal
-export DIRENV_LOG_FORMAT=                       # disable direnv output
-export EDITOR=nano                              # default editor nano
+export ABBR_AUTOLOAD=0                                    # disable updates to the user abbrevations file
+export ABBR_QUIET=1                                       # enable abbr quiet mode
+export HOMEBREW_NO_AUTO_UPDATE=1                          # do not automatically update before running
+export CLICOLOR=1                                         # enable colours in terminal
+export DIRENV_LOG_FORMAT=                                 # disable direnv output
+export EDITOR=nano                                        # default editor nano
 export FZF_DEFAULT_OPTS="--ansi --height=33% --bind 'backward-eof:abort' --color=dark,fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#c930c7,info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
-export FZF_TMUX_HEIGHT="33%"
-export GIT_COMPLETION_CHECKOUT_NO_GUESS=1       # Do not include "DWIM" suggestions in git-checkout and git-switch completion
+export FZF_TMUX_HEIGHT="33%"                              # limit fzf height
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1                 # do not include "DWIM" suggestions in git-checkout and git-switch completion
 export KUBECTL_EXTERNAL_DIFF="$HOME/.kube/kubectl_external_diff.sh"
-export LESS="--quit-if-one-screen"              # automatically exit if the entire file can be displayed on the first screen
-export LS_COLORS="$(vivid generate jellybeans)" # generate a LS_COLORS expression
+export LESS="--quit-if-one-screen"                        # automatically exit if the entire file can be displayed on the first screen
+export LS_COLORS="$(vivid generate jellybeans)"           # generate a LS_COLORS expression
 # export LS_COLORS="di=36:ln=35:so=31;1;44:pi=30;1;44:ex=1;31:bd=0;1;44:cd=37;1;44:su=37;1;41:sg=30;1;43:tw=30;1;42:ow=30;1;43"
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
-export ZSH_AUTOSUGGEST_USE_ASYNC=               # disable autosuggestion async
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD                    # colour settings for ls
+export ZSH_AUTOSUGGEST_USE_ASYNC=                         # disable autosuggestion async
 export ZSH_AUTOSUGGEST_CLEAR_WIDGETS=($ZSH_AUTOSUGGEST_CLEAR_WIDGETS fzf-tab-partial)
-export LISTMAX=0                                # number of matches to list without asking first
-export _ZO_EXCLUDE_DIRS=$HOME
-export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"
+export LISTMAX=0                                          # number of matches to list without asking first
+export _ZO_EXCLUDE_DIRS=$HOME                             # exclude home directory from results
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"  # derive zoxide fzf options from existing options
 
 ## aliases
 alias as="asdf shell"
@@ -88,9 +88,9 @@ alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
 
 ## functions
 function fzf-tab-partial() { CURRENTWORD="${LBUFFER/* /}${RBUFFER/ */}"; if [[ ($LASTWIDGET = 'fzf-tab-partial' && $_lastcomp[nmatches] -ge 5) || -z $CURRENTWORD ]]; then fzf-tab-complete; else zle complete-word; fi }
-function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink -f ${@: -1} ) ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
 function up-line-or-history() { zle set-local-history 1; zle .up-line-or-history; zle set-local-history 0; }
 function down-line-or-history() { zle set-local-history 1; zle .down-line-or-history; zle set-local-history 0; }
+function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink -f ${@: -1} ) ]]; then lsd ${@:1:${#}-1} $( greadlink -f ${@: -1} ); else lsd ${@}; fi }
 
 ## zstyle
 zstyle ':completion:*'          list-colors ${(s.:.)LS_COLORS}        # use ls colors
