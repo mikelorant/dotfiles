@@ -59,7 +59,6 @@ export PATH="$PATH:/usr/local/sbin"                         # add path for homeb
 export PATH="$PATH:$HOME/go/bin"                            # add path for go
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"         # add path for mysql-client
 
-export _ZO_EXCLUDE_DIRS=$HOME
 export ABBR_AUTOLOAD=0                          # disable updates to the user abbrevations file
 export ABBR_QUIET=1                             # enable abbr quiet mode
 export HOMEBREW_NO_AUTO_UPDATE=1                # do not automatically update before running
@@ -76,6 +75,8 @@ export LS_COLORS="$(vivid generate jellybeans)" # generate a LS_COLORS expressio
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD          # colour settings for ls
 export ZSH_AUTOSUGGEST_USE_ASYNC=               # disable autosuggestion async
 export LISTMAX=0                                # number of matches to list without asking first
+export _ZO_EXCLUDE_DIRS=$HOME
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"
 
 ## aliases
 alias as="asdf shell"
