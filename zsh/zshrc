@@ -24,6 +24,7 @@ antidote load
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
+eval "$(asdfswitcher init zsh)"
 
 ## extra completions
 [ ! -f ${fpath[1]}/_kubectl ] && kubectl completion zsh > ${fpath[1]}/_kubectl
@@ -79,7 +80,6 @@ export _ZO_EXCLUDE_DIRS=$HOME                             # exclude home directo
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"  # derive zoxide fzf options from existing options
 
 ## aliases
-alias as="asdf shell"
 alias cat="bat"
 alias df="df -blh"
 alias grep="grep --color=auto"
