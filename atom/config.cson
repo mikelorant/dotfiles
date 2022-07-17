@@ -1,5 +1,7 @@
 "*":
   "Sublime-Style-Column-Selection": {}
+  "atom-ide-outline":
+    initialDisplay: false
   core:
     disabledPackages: [
       "exception-reporting"
