@@ -36,6 +36,15 @@
     minimumWidth: 200
   welcome:
     showOnStartup: false
+  "x-terminal":
+    spawnPtySettings:
+      projectCwd: true
+    terminalSettings:
+      defaultOpenPosition: "Bottom Dock"
+      fontSize: 12
+      leaveOpenAfterExit: false
+      relaunchTerminalOnStartup: false
+      xtermOptions: "{\"cursorBlink\": false}"
 ".go.source":
   editor:
     showIndentGuide: true
