@@ -22,6 +22,8 @@
     ]
   "go-plus":
     disableToolCheck: true
+    panel:
+      displayMode: "closed"
     skipCodeFormatCheck: true
     test:
       coverageDisplayMode: "gutter"
