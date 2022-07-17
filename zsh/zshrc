@@ -82,6 +82,7 @@ export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"  # derive zoxide fzf op
 ## aliases
 alias cat="bat"
 alias df="df -blh"
+alias dl='docker exec -it $( docker ps --latest --quiet ) sh'
 alias grep="grep --color=auto"
 alias less="bat --paging=auto"
 alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
