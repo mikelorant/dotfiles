@@ -15,12 +15,12 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 antidote load
 
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                                  # p10k configuration
-[ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                          # fresh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                                    # fzf
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                                                # p10k configuration
+[ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                                        # fresh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                                                  # fzf
 [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
-[ -f /usr/local/opt/switch/switch.sh ] && source /usr/local/opt/switch/switch.sh          # switch
-[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && source /usr/local/opt/asdf/libexec/asdf.sh  # asdf
+[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && source /usr/local/opt/asdf/libexec/asdf.sh                # asdf
+[ -f /usr/local/opt/switch/switch.sh ] && source /usr/local/opt/switch/switch.sh && switch . >/dev/null # switch
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
