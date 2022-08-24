@@ -107,4 +107,4 @@ zle -N bracketed-paste bracketed-paste-magic
 
 zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
 
-[[ ${ITERM_SESSION_ID:3:1} -eq 0 && -x $(command -v neofetch) ]] && neofetch || true
+[[ ${ITERM_SESSION_ID:3:1} = 0 && -x $(command -v neofetch) ]] && neofetch || true
