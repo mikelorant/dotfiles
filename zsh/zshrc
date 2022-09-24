@@ -85,7 +85,7 @@ alias df="df -blh"
 alias dl='docker exec -it $( docker ps --latest --quiet ) sh'
 alias grep="grep --color=auto"
 alias less="bat --paging=auto"
-alias ls="lsd-symbolic-link-dereference --group-dirs first --date relative"
+alias ls="lsd-symbolic-link-dereference"
 
 ## functions
 function fzf-tab-partial() { CURRENTWORD="${LBUFFER/* /}${RBUFFER/ */}"; if [[ ($LASTWIDGET = 'fzf-tab-partial' && $_lastcomp[nmatches] -ge 5) || -z $CURRENTWORD ]]; then fzf-tab-complete; else zle complete-word; fi }
