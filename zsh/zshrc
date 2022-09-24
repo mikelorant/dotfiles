@@ -57,7 +57,6 @@ bindkey "^X^_"    redo
 ## environmental variables
 export PATH="$PATH:/usr/local/sbin"                       # add path for homebrew
 export PATH="$PATH:$HOME/go/bin"                          # add path for go
-export PATH="$PATH:/usr/local/opt/mysql-client/bin"       # add path for mysql-client
 export PATH="$PATH:$HOME/.krew/bin"                       # add path for krew
 
 export ABBR_AUTOLOAD=0                                    # disable updates to the user abbrevations file
