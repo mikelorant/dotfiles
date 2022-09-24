@@ -18,6 +18,11 @@ Host 10.44.*
   UserKnownHostsFile /dev/null
   LogLevel QUIET
 
+Host 10.125.*
+  User ubuntu
+  UserKnownHostsFile /dev/null
+  LogLevel QUIET
+
 Host azrael
   User mikel
   Hostname azrael.mlvision.com.au
