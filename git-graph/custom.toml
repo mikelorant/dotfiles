@@ -1,0 +1,57 @@
+persistence = ['^(master|main)$']
+order = [
+    '^(feature|feat).*$',
+    '^(docs).*$',
+    '^(chore).*$',
+    '^(refactor).*$',
+    '^(fix).*$',
+    '^(master|main)$',
+]
+
+[terminal_colors]
+matches = [
+    [
+        '^(master|main)$',
+        ['bright_white'],
+    ], [
+        '^tags/.*$',
+        ['bright_green'],
+    ], [
+        '^(fix).*$',
+        ['bright_red']
+    ], [
+        '^(refactor).*$',
+        ['bright_cyan'],
+    ], [
+        '^(chore|docs).*$',
+        ['bright_magenta'],
+    ], [
+        '^(feat|feature).*$',
+        ['bright_green']
+    ],
+]
+unknown = [
+    'bright_yellow',
+    'bright_green',
+    'bright_red',
+    'bright_magenta',
+    'bright_cyan',
+]
+
+[svg_colors]
+matches = [
+    [
+        '^(master|main)$',
+        ['blue'],
+    ], [
+        '^tags/.*$',
+        ['green'],
+    ],
+]
+unknown = [
+    'orange',
+    'green',
+    'red',
+    'purple',
+    'turquoise',
+]
