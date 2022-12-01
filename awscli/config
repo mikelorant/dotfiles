@@ -1,2 +1,9 @@
 [default]
 region = ap-southeast-2
+
+[profile nine]
+sso_start_url=https://nine.awsapps.com/start
+sso_region=ap-southeast-2
+sso_account_id=502922697139
+sso_role_name=super-admin-role
+region=ap-southeast-2
