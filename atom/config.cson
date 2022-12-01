@@ -12,7 +12,7 @@
       "dracula-syntax"
     ]
   editor:
-    fontFamily: "JetBrainsMono Nerd Font"
+    fontFamily: "JetBrains Mono"
     preferredLineLength: 120
   "file-icons":
     onChanges: true
