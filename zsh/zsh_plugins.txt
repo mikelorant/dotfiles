@@ -7,5 +7,6 @@ aloxaf/fzf-tab
 ael-code/zsh-colored-man-pages
 hlissner/zsh-autopair
 olets/zsh-abbr
+djui/alias-tips
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
