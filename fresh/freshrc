@@ -16,7 +16,7 @@ fresh atom/config.cson --file=~/.atom/config.cson
 fresh atom/styles.less --file=~/.atom/styles.less
 fresh awscli/* --file=~/.aws/config
 fresh bat/* --file=~/.config/bat/config
-fresh git/* --file=~/.gitconfig --filter="erb -T 2"
+fresh git/* --file=~/.config/git/config
 fresh git-graph/* --file=~/Library/Application\ Support/git-graph/models/custom.toml
 fresh golangci-lint/* --file=~/.golangci.yaml
 fresh kubectl/* --file=~/.kube/kubectl_external_diff.sh

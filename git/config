@@ -1,0 +1,66 @@
+[advice]
+    # Advice shown if a hook is ignored because the hook is not set as executable
+    ignoredHook = false
+
+[alias]
+    basename = ! basename `git config --get remote.origin.url` .git
+    cane = commit --amend --no-edit
+    cl=! git-delete-merged-branches --yes
+    gr="! f() { git-graph --model custom --style round --local --color always $@ | devmoji ;}; f"
+    last = log --patch --no-merges --max-count=1 --stat
+    ll="! f() { git log --no-merges $@ | devmoji | bat ;}; f"
+    ls="! f() { git log --pretty='%C(yellow)%h%C(reset) %C(cyan)%<|(23,trunc)%cd%C(reset) %C(magenta)%<(15,trunc)%aN%C(reset) %<(65,trunc)%s %C(auto)%<(70,trunc)%D%C(reset)' --date=relative --decorate-refs-exclude=refs/remotes --no-merges --color=always --max-count 20 $@ | devmoji ;}; f"
+    rim = rebase --interactive master
+    sw = switch
+
+[core]
+    # Edit messages by launching an editor
+    editor = nano --syntax git --fill 72 --breaklonglines --guidestripe=72
+    # Sets default options for merging into branch
+    mergeoptions = --no-edit
+    # Text viewer for use by Git commands
+    pager = less -R
+
+[delta]
+    # Features to activate
+    features = diff-so-fancy line-numbers
+    # Syntax highlighting theme to use
+    syntax-theme = Dracula
+
+[diff]
+    # Moved lines in a diff are colored differently
+    colormoved = default
+
+[init]
+    # Allows overriding the default branch name
+    defaultBranch = master
+
+[interactive]
+    # When an interactive command shows a colorized diff, git will pipe the diff through the shell command.
+    diffFilter = delta --color-only
+
+[log]
+    # Set the default date-time mode for the log command
+    date = relative
+
+[pager]
+    # Turns on pagination for the subcommand using the pager specified
+    diff = delta
+
+[pull]
+    # Only update to the new history if there is no divergent local history
+    ff = only
+
+[push]
+    # Assume --set-upstream on default push when no upstream tracking exists for the current branch
+    autoSetupRemote = true
+    # Defines the action git push should take if no refspec is given
+    default = current
+
+[rebase]
+    # Enable --update-refs option
+    updateRefs = true
+
+[remote "origin"]
+    # Disables automatic tag following when fetching from remote
+    tagopt = --no-tags
