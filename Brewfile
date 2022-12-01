@@ -73,6 +73,7 @@ brew "kube-yaml-sort"
 brew "kubectl", link: false
 brew "kustomize"
 brew "less"
+brew "lnav"
 brew "lsd"
 brew "mariadb"
 brew "mas"
