@@ -188,4 +188,5 @@ mas "parcel", id: 639968404
 mas "peakhour", id: 961578824
 mas "smartpaste", id: 1540496001
 mas "snippetslab", id: 1006087419
+mas "snippety", id: 1530751461
 mas "sourcenotify", id: 1570433591
