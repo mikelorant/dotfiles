@@ -1,5 +1,6 @@
 abbr afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 abbr ip="dig +short myip.opendns.com @resolver1.opendns.com"
+abbr g="git"
 abbr k="kubectl"
 abbr kcd="switch"
 abbr kns="switch ns"
