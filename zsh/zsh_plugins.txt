@@ -4,11 +4,8 @@ romkatv/powerlevel10k
 # priority
 aloxaf/fzf-tab
 
-# deferred
-ael-code/zsh-colored-man-pages kind:defer
-hlissner/zsh-autopair kind:defer
-olets/zsh-abbr kind:defer
-zdharma-continuum/fast-syntax-highlighting kind:defer
-
-# delayed
+ael-code/zsh-colored-man-pages
+hlissner/zsh-autopair
+olets/zsh-abbr
+zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
