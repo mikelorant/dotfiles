@@ -1,0 +1,21 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: ..
+  keepdot: false
+  key_prefix: false
+  link_dotfile_default: relative
+  link_on_import: relative
+  longkey: false
+  showdiff: true
+  impignore: config
+dotfiles:
+  dive:
+    src: example
+    dst: ~/.config/example
+    link: link_children
+profiles:
+  all:
+    dotfiles:
+    - example

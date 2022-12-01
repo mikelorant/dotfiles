@@ -38,6 +38,7 @@ brew "direnv"
 brew "dirstat-rs"
 brew "docker-credential-helper-ecr"
 brew "dog"
+brew "dotdrop"
 brew "ds", link: false
 brew "dyff"
 brew "f2"
