@@ -1,4 +1,5 @@
 set autoindent
+set constantshow
 set nowrap
 set tabsize 4
 set tabstospaces
