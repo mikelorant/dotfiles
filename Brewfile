@@ -40,6 +40,7 @@ brew "dockutil"
 brew "dog"
 brew "ds", link: false
 brew "dyff"
+brew "f2"
 brew "fd"
 brew "findutils"
 brew "fzf"
