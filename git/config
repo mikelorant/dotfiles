@@ -4,6 +4,7 @@
 
 [alias]
     basename = ! basename `git config --get remote.origin.url` .git
+    co = ! committed
     cane = commit --amend --no-edit
     cl=! git-delete-merged-branches --yes
     gr="! f() { git-graph --model custom --style round --local --color always $@ | devmoji ;}; f"
@@ -15,6 +16,7 @@
 
 [core]
     # Edit messages by launching an editor
+    # editor = committed --editor
     editor = nano --syntax git --fill 72 --breaklonglines --guidestripe=72
     # Sets default options for merging into branch
     mergeoptions = --no-edit
@@ -43,6 +45,10 @@
     # Set the default date-time mode for the log command
     date = relative
 
+[merge]
+    # Specify the style in which conflicted hunks are written out to working tree files upon merge.
+    conflictstyle = zdiff3
+
 [pager]
     # Turns on pagination for the subcommand using the pager specified
     diff = delta
@@ -59,7 +65,7 @@
 
 [rebase]
     # Enable --update-refs option
-    updateRefs = true
+    # updateRefs = true
 
 [remote "origin"]
     # Disables automatic tag following when fetching from remote

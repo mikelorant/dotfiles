@@ -36,13 +36,13 @@ dockutil --no-restart --section apps --add "/System/Applications/System Preferen
 dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/Firefox.app"
 dockutil --no-restart --section apps --add "/Applications/iTerm.app"
-dockutil --no-restart --section apps --add "/Applications/Atom.app"
+dockutil --no-restart --section apps --add "/Applications/Pulsar.app"
 
 dockutil --no-restart --section apps --type spacer --add ""
 dockutil --no-restart --section apps --add "/Applications/Slack.app"
 
 dockutil --no-restart --section apps --type spacer --add ""
-dockutil --no-restart --section apps --add "/Applications/1Password 7.app"
+dockutil --no-restart --section apps --add "/Applications/1Password.app"
 
 # Default Others
 dockutil --no-restart --section others --add "${HOME}/Downloads" --view fan --display stack --sort dateadded

@@ -6,35 +6,26 @@ AddKeysToAgent yes
 PubkeyAcceptedKeyTypes +ssh-dss
 
 IdentityFile   ~/.ssh/id_rsa
+IdentityFile   ~/.ssh/kubernetes.ninetech.dev
 IdentityFile   ~/.ssh/ffxblue_cloudformation
-IdentityFile   ~/.ssh/ffxwhite_cloudformation
-IdentityFile   ~/.ssh/white_id_dsa
-
-Host *.ffxblue.com.au
-  User ubuntu
-
-Host 10.44.*
-  User ubuntu		
-  UserKnownHostsFile /dev/null
-  LogLevel QUIET
-
-Host 10.125.*
-  User ubuntu
-  UserKnownHostsFile /dev/null
-  LogLevel QUIET
 
 Host azrael
   User mikel
   Hostname azrael.mlvision.com.au
 
+Host 10.44.*
+  User ec2-user
+  UserKnownHostsFile /dev/null
+  LogLevel QUIET
+
 host i-* mi-*
-  User ubuntu
+  User ec2-user
   ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
   UserKnownHostsFile /dev/null
   LogLevel QUIET
 
 host ip-10-44-*
-  User ubuntu
+  User ec2-user
   ProxyCommand sh -c "aws ssm start-session --target $( aws ec2 describe-instances --filters 'Name=private-dns-name,Values=%h' --output text --query 'Reservations[*].Instances[*].InstanceId' ) --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
   UserKnownHostsFile /dev/null
   LogLevel QUIET

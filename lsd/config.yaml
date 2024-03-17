@@ -1,3 +1,11 @@
 date: relative
 sorting:
   dir-grouping: first
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - git
+  - name

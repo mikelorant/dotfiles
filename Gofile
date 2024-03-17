@@ -4,23 +4,31 @@ go clean -modcache
 
 # rm -r $HOME/go
 
-go install github.com/cweill/gotests/...@v1.6.0       # gotests - generate table driven tests
-go install github.com/fatih/gomodifytags@v1.16.0      # gomodifytags - modify struct tags
-go install github.com/hhatto/gocloc/cmd/gocloc@v0.4.2 # gocloc - count lines of code
-go install github.com/mdempsky/gocode@latest          # gocode - autocompletion - ARCHIVED
-go install github.com/mgechev/revive@v1.2.1           # revive - linter
-go install github.com/ramya-rao-a/go-outline@1.0.0    # go-outline - convert struct to json
-go install github.com/rogpeppe/godef@v1.1.2           # godef - find symbols
-go install github.com/segmentio/golines@v0.9.0        # golines - long line formatter
-go install github.com/spf13/cobra-cli@v1.3.0          # cobra-cli - cobra generator
-go install github.com/sqs/goreturns@latest            # goreturns - add zero-value return values
-go install github.com/tpng/gopkgs@latest              # gopkgs - list available packages
-go install github.com/zmb3/goaddimport@latest         # goaddimport - adds imports
-go install github.com/zmb3/gogetdoc@latest            # gogetdoc - get documentation
-go install golang.org/x/tools/cmd/godoc@v0.1.10       # godoc - generate documentation
-go install golang.org/x/tools/cmd/goimports@v0.1.10   # goimports - updates imports
-go install golang.org/x/tools/cmd/gorename@v0.1.10    # gorename - rename identifiers
-go install golang.org/x/tools/cmd/guru@v0.1.10        # guru - find references
-go install honnef.co/go/tools/cmd/staticcheck@2022.1  # staticcheck - linter
-go install mvdan.cc/gofumpt@v0.3.1                    # gofumpt - stricter gofmt
-go install golang.org/x/tools/gopls@v0.8.4            # gopls - language server
+go install 4d63.com/gochecknoglobals@v0.2.1               # gochecknoglobals - check no global variables
+go install github.com/cweill/gotests/...@v1.6.0           # gotests - generate table driven tests
+go install github.com/fatih/gomodifytags@v1.16.0          # gomodifytags - modify struct tags
+go install github.com/hhatto/gocloc/cmd/gocloc@v0.5.2     # gocloc - count lines of code
+go install github.com/kevwan/depu@v1.0.5                  # depu - update dependencies
+go install github.com/mdempsky/gocode@latest              # gocode - autocompletion - ARCHIVED
+go install github.com/mfridman/tparse@v0.13.2             # tpase - summarise test output
+go install github.com/mgechev/revive@v1.3.7               # revive - linter
+go install github.com/loov/goda@v0.5.7                    # goda - dependency analysis toolkit
+go install github.com/incu6us/goimports-reviser/v3@v3.6.4 # goimports-reviser - sort goimports
+go install github.com/ramya-rao-a/go-outline@1.0.0        # go-outline - convert struct to json
+go install github.com/rogpeppe/godef@v1.1.2               # godef - find symbols
+go install github.com/segmentio/golines@v0.9.0            # golines - long line formatter
+go install github.com/soapiestwaffles/s3-nuke@v1.1.3      # s3-nuke - empty AWS S3 bucket
+go install github.com/spf13/cobra-cli@v1.3.0              # cobra-cli - cobra generator
+go install github.com/sqs/goreturns@latest                # goreturns - add zero-value return values
+go install github.com/tpng/gopkgs@latest                  # gopkgs - list available packages
+go install github.com/zmb3/goaddimport@latest             # goaddimport - adds imports
+go install github.com/zmb3/gogetdoc@latest                # gogetdoc - get documentation
+go install golang.org/x/perf/cmd/benchstat@latest         # benchstat - summarise benchmark results
+go install golang.org/x/tools/cmd/godoc@v0.19.0           # godoc - generate documentation
+go install golang.org/x/tools/cmd/goimports@v0.19.0       # goimports - updates imports
+go install golang.org/x/tools/cmd/gorename@v0.19.0        # gorename - rename identifiers
+go install golang.org/x/tools/cmd/guru@v0.19.0            # guru - find references
+go install golang.org/x/tools/gopls@v0.19.0               # gopls - language server
+go install honnef.co/go/tools/cmd/staticcheck@v0.4.7      # staticcheck - linter
+go install mvdan.cc/gofumpt@v0.6.0                        # gofumpt - stricter gofmt
+go install github.com/oligot/go-mod-upgrade@v0.9.1        # go-mod-upgrade - upgrade modules

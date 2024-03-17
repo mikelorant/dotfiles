@@ -5,33 +5,28 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -Uz compinit bracketed-paste-magic
+autoload -Uz compinit
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi;
 
 # plugin loader
-[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
-source ~/.antidote/antidote.zsh
+[ -f /usr/local/opt/antidote/share/antidote/antidote.zsh ] && source /usr/local/opt/antidote/share/antidote/antidote.zsh
 zstyle ':antidote:bundle' use-friendly-names 'yes'
-
 antidote load
 
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh                                                                # p10k configuration
 [ -f ~/.fresh/build/shell.sh ] && source ~/.fresh/build/shell.sh                                        # fresh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                                                                  # fzf
 [ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
 [ -f /usr/local/opt/asdf/libexec/asdf.sh ] && source /usr/local/opt/asdf/libexec/asdf.sh                # asdf
-[ -f /usr/local/opt/switch/switch.sh ] && source /usr/local/opt/switch/switch.sh && switch . >/dev/null # switch
+[ -f /usr/local/opt/switch/switch.sh ] && source /usr/local/opt/switch/switch.sh # && switch . >/dev/null # switch
 
+eval "$(fzf --zsh)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh --cmd cdd)"
 eval "$(asdfswitcher init zsh)"
 
-## extra completions
-[ ! -f ${fpath[1]}/_kubectl ] && kubectl completion zsh > ${fpath[1]}/_kubectl
-
 ## history file
 HISTFILE=~/.zhistory
-HISTSIZE=100000000
+HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 
 ## history command
@@ -57,8 +52,8 @@ bindkey "^X^_"    redo
 
 ## environmental variables
 export PATH="$PATH:/usr/local/sbin"                       # add path for homebrew
-export PATH="$PATH:$HOME/go/bin"                          # add path for go
-export PATH="$PATH:$HOME/.krew/bin"                       # add path for krew
+export PATH="$PATH:$HOME/.go/bin"                         # add path for go
+export PATH="$PATH:$HOME/.cargo/bin"                      # add path for rust
 
 export ABBR_AUTOLOAD=0                                    # disable updates to the user abbrevations file
 export ABBR_QUIET=1                                       # enable abbr quiet mode
@@ -70,9 +65,12 @@ export DIRENV_LOG_FORMAT=                                 # disable direnv outpu
 export EDITOR=nano                                        # default editor nano
 export FZF_DEFAULT_OPTS="--ansi --height=33% --bind 'backward-eof:abort' --color=dark,fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#c930c7,info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
 export FZF_TMUX_HEIGHT="33%"                              # limit fzf height
+export GOPATH="$HOME/.go"                                 # Go code, packages, and other source files
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1                 # do not include "DWIM" suggestions in git-checkout and git-switch completion
+export HOMEBREW_NO_ENV_HINTS=1                            # do not print any hints about changing Homebrew’s behaviour
 export KUBECTL_EXTERNAL_DIFF="$HOME/.kube/kubectl_external_diff.sh"
 export LESS="--quit-if-one-screen"                        # automatically exit if the entire file can be displayed on the first screen
+export LESSHISTFILE=-                                     # history file used to remember search commands
 export LISTMAX=0                                          # number of matches to list without asking first
 export LS_COLORS="$(vivid generate jellybeans)"           # generate a LS_COLORS expression
 # export LS_COLORS="di=36:ln=35:so=31;1;44:pi=30;1;44:ex=1;31:bd=0;1;44:cd=37;1;44:su=37;1;41:sg=30;1;43:tw=30;1;42:ow=30;1;43"
@@ -85,7 +83,7 @@ export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --layout=reverse"  # derive zoxide fzf op
 ## aliases
 alias cat="bat"
 alias df="df -blh"
-alias dl="docker exec -it $( docker ps --latest --quiet ) sh"
+alias dl='docker exec -it $( docker ps --latest --quiet ) sh'
 alias grep="grep --color=auto"
 alias less="bat --paging=auto"
 alias ls="lsd-symbolic-link-dereference"
@@ -100,14 +98,12 @@ function lsd-symbolic-link-dereference() { if [[ -h ${@: -1} && -d $( greadlink 
 zstyle ':completion:*'          list-colors ${(s.:.)LS_COLORS}        # use ls colors
 zstyle ':completion:*'          matcher-list '' 'm:{a-zA-Z}={A-Za-z}' # case insensitive
 zstyle ':completion:*'          menu select                           # menu select
-zstyle ':bracketed-paste-magic' active-widgets '.self-*'              # fixes slow paste
 
 ## zle
 zle -N fzf-tab-partial
 zle -N up-line-or-history
 zle -N down-line-or-history
-zle -N bracketed-paste bracketed-paste-magic
 
 zle_highlight=(region:bold special:bold suffix:bold isearch:underline paste:bold)
 
-[[ ${ITERM_SESSION_ID:3:1} = 0 && -x $(command -v neofetch) ]] && neofetch || true
+[[ ${ITERM_SESSION_ID:3:1} = 0 && -x $(command -v fastfetch) ]] && (fastfetch --pipe false ; echo) || true

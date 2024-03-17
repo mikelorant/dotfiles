@@ -1,0 +1,35 @@
+"*":
+  "column-selection":
+    mouseButton: 1
+    selectKey: 2
+  core:
+    disabledPackages: [
+      "exception-reporting"
+      "welcome"
+    ]
+    themes: [
+      "one-dark-ui"
+      "dracula-syntax"
+    ]
+  editor:
+    fontFamily: "JetBrains Mono"
+    preferredLineLength: 120
+  "file-icons":
+    onChanges: true
+  "markdown-table-formatter":
+    formatOnSave: false
+  minimap:
+    plugins:
+      cursorline: true
+      "git-diff": true
+  "open-files":
+    collapsable: false
+  "tree-view-autoresize":
+    minimumWidth: 200
+  welcome:
+    showChangeLog: false
+    showOnStartup: false
+".go.source":
+  editor:
+    tabLength: 4
+    tabType: "hard"
