@@ -13,6 +13,10 @@ Host azrael
   User mikel
   Hostname azrael.mlvision.com.au
 
+Host router
+  User root
+  Hostname router.mlvision.com.au
+
 Host 10.44.*
   User ec2-user
   UserKnownHostsFile /dev/null
