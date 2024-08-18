@@ -7,7 +7,6 @@ PubkeyAcceptedKeyTypes +ssh-dss
 
 IdentityFile   ~/.ssh/id_rsa
 IdentityFile   ~/.ssh/kubernetes.ninetech.dev
-IdentityFile   ~/.ssh/ffxblue_cloudformation
 
 Host azrael
   User mikel

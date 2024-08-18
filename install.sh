@@ -2,24 +2,24 @@
 
 export FRESH_LOCAL_SOURCE=mikelorant/dotfiles
 
-/usr/bin/xcode-select -p || /usr/bin/xcode-select --install
+/usr/bin/xcode-select --print-path || /usr/bin/xcode-select --install
 
 echo "After Xcode Command Line Developer Tools has installed press enter."
 read
 
-[ -f $HOME/.ssh/id_rsa ] || ssh-keygen -f $HOME/.ssh/id_rsa -C $(id -un)
+[ -f ~/.ssh/id_ed25519 ] || ssh-keygen -f  ~/.ssh/id_ed25519 -N "" -C $(id -un)
 
-[ -f $HOME/.freshrc ] || /usr/bin/env bash <(curl -sL https://get.freshshell.com)
+[ -f ~/.freshrc ] || /usr/bin/env bash <(curl -sL https://get.freshshell.com)
 ln -sf .dotfiles/fresh/freshrc $HOME/.freshrc
 
-which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 cd $HOME/.dotfiles
 
-sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" | exit; done 2>/dev/null &
+sudo --validate
+while true; do sudo --non-interactive true; sleep 60; kill -0 "$$" | exit; done 2>/dev/null &
 
-softwareupdate -i -a
+softwareupdate --install --all --verbose
 
 brew update
 brew upgrade
@@ -30,8 +30,6 @@ cd $HOME
 bin/fresh
 cd -
 
-iterm2/iterm2.sh --init
+which ppm && ppm stars --install
 
-which atom && apm stars --install
-
-which gem && gem install -g Gemfile
+# which gem && gem install -g Gemfile
